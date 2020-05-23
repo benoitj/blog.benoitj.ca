@@ -1,0 +1,9 @@
+baseURL = "https://blog.benoitj.ca/"
+languageCode = "en-us"
+title = "My mostly tech blog"
+theme = "mymotherfuckingwebsite"
+
+[params]
+  description = "My mostly tech blog"
+  dateform = "2006-01-02"
+  author = "Benoit J"
