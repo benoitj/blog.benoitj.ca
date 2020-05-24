@@ -1,0 +1,19 @@
+---
+title: "I should try blogging"
+date: 2020-05-24T00:02:13-04:00
+draft: false
+---
+
+Like many, I've been thinking about sharing using a personal blog. Like many, I've been procrastinating about it :).
+
+I can thank the movement #100DaysToOffload initiated by Kev Quirk on fosstodon to get me out of my lazyness.
+
+Im hoping to share in whatever interest me, but mostly:
+ - coding
+ - linux, apps I use
+ - electronics and games
+ - anything I am learning right now, from food, to building house stuff
+
+We'll see how like I can keep the blogging procrastination beast away :)
+
+As a constant learner, constructive feedbacks are always welcomed. See my [[/about][about]] page for contact info.

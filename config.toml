@@ -3,6 +3,9 @@ languageCode = "en-us"
 title = "My mostly tech blog"
 theme = "mymotherfuckingwebsite"
 
+[permalinks]
+  "/posts" = "/:year-:month-:day-:filename/"
+
 [params]
   description = "My mostly tech blog"
   dateform = "2006-01-02"

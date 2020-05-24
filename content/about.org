@@ -1,0 +1,10 @@
+* About me
+
+Messing around with computers and coding since I was 8. Now getting paid to do what I love.
+
+I'm currently consulting and leading teams delivering various software solutions. Recently learning functional programming (Clojure and Haskell).
+
+You can reach me:
+- by email: benoit at benoitj.ca
+- on fosstodon: @benoitj@fosstodon.org
+- on [[https://www.linkedin.com/in/benjoly][Linkedin]]
