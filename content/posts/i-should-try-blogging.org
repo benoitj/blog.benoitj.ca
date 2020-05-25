@@ -13,7 +13,8 @@ Like many, I've been thinking about sharing using a personal blog. Like many, I'
 
 I can thank the movement #100DaysToOffload initiated by Kev Quirk on fosstodon to get me out of my lazyness.
 
-Im hoping to share in whatever interest me, but mostly:
+Im hoping to share whatever interest me, but mostly:
+
  - coding
  - linux, apps I use
  - electronics and games
