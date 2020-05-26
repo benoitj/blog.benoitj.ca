@@ -2,7 +2,7 @@
 
 Messing around with computers and coding since I was 8. Now getting paid to do what I love.
 
-I'm currently consulting and leading teams delivering various software solutions. Recently learning functional programming (Clojure and Haskell).
+I'm currently consulting and leading teams delivering various software solutions using various languages. Recently been learning functional programming (Clojure and Haskell).
 
 You can reach me:
 - by email: benoit at benoitj.ca
