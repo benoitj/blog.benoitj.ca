@@ -1,0 +1,153 @@
+---
+title: "Blogging Setup"
+date: 2020-05-24T21:25:51-04:00
+draft: true
+categories:
+- tech
+tags:
+- blogging
+---
+
+In this second post, I'll go over solutions to get going within one day. I wanted this to be quick so I can write something else than blog setup :)
+
+My hope for blogging setup:
+
+1. something I can use from day one, get out of the way, and allow me to improve at a later time
+2. automated build and deploy
+3. use a markup language like commonmark/markdown, org-mode, or asciidoc. Preferably org-mode since I want to use org babel with code blocs.
+4. simple
+   1. presentation in a super simple CSS
+   2. use HTML5
+
+Spoiler alert: it's possible to get most of these up and running in one day, if you accept some compromise and don't get stuck on issues that have little impact.
+
+** Build the site
+
+Couple of options I've looked at:
+
+1. use something like pandoc with couple of shell scripts or makefiles
+   Great to convert single files. Could have worked for a 1 day setup, but not necessarily easy to get going on a free CI platform. Also a I bit too custom to my liking if I want to create templates, archetypes. All possible, but I suspect too needy.
+2. use org publish with plain org files
+   Not too convinced with this one. It feels like pandoc, but in Emacs :). Easy to start, but would not be great to integrate with a CI platform.
+3. use the great export plugin [[https://ox-hugo.scripter.co/][ox-hugo - Org to Hugo exporter]] from Kaushal Modi
+   Would work better for me since this is a bridge between Emacs/org-mode and a static site generator.
+   The main downside to me is that I did not used Hugo before, and this creates abstraction on top of Hugo. Would Be a good addition once I know Hugo.
+4. use a static site generator like Jekyll or Hugo
+   Since I have some hope to use ox-hugo in the future, I did try to get Hugo working for my blog.
+   Hugo also support org-mode in addition to markdown.
+
+** Prototyping
+
+Followed the Hugo getting started and got a two dummy post created.
+
+This is really easy to get [[https://gohugo.io/getting-started/quick-start/][started]]. Here are the main steps:
+1. create a site
+2. associate a theme
+3. create some posts
+4. run Hugo in server mode and open up your browser to http://localhost:1313
+
+
+That's all you need to get started.
+
+** The hardest part is yet to come. Teeming and Rendering.
+
+I really like clean and simple. Now there are many nice clean/simple theme on Hugo site, but the ones I liked had big css and many even made use of javascript. Also, none made use of simpler elements defined in HTML5.
+
+What I was looking for was in the spirit the opinionated [[https://thebestmotherfucking.website/][thebestmotherfuckingwebsite]].
+
+Found this now unmaintained Hugo theme: https://github.com/mpcsh/hugo-theme-motherfuckingwebsite
+
+Made my own [[https://github.com/benoitj/my-hugo-motherfuckingwebsite][version]] to be able to make it work:
+- change the navigation menu: add a link to the post RSS feed, merge about and contact together
+- issues with generating the index list. looks like it is sensitive to folder name
+- index template is using description front matter data instead of summary
+
+The templates and CSS are quite simple but not HTML5.
+
+At this point, it's good enough visually, on my laptop... No time to waste, next step!
+
+** Deployment
+
+Some hope for deployment:
+- integrates with either GitHub or bitbucket (hosted accounts I have)
+- build my Hugo site from sources on some my public repos.
+- support custom domain
+- something I would not have to read much about
+
+Couple of options comes to mind:
+1. github pages
+2. gitlab pages
+3. netlify
+
+Here, my objective is to get it done ASAP. so no A/B comparison of which on is best. The first hit that seems to work is king :).
+
+Search string from the first thing that comes to my mind: /hugo publish netlify github/
+First hit: [[https://gohugo.io/hosting-and-deployment/hosting-on-netlify/][Host on Netlify | Hugo]]
+
+That's it, I have my solution :)
+
+Followed the guide, starting with the dummy site above. I ended up swapping it with this a new github repo [[https://github.com/benoitj/blog.benoitj.ca][GitHub - benoitj/blog.benoitj.ca: my blog sources]].
+
+Now each time I push new changes, I can see it on the generated netlify domain.
+
+** domain name
+
+Now, lets get a custom domain setup.
+
+I already own one, so after a bit of research found the Netlify guide to [[https://docs.netlify.com/domains-https/custom-domains/configure-external-dns/#configure-a-subdomain][Configure external DNS for a custom domain | Netlify Docs]]
+
+Finding the doc was the hardest part, Netlify appears to sell domains in addition to website hosting. So the first few guides are over setting up Netlify DNS.
+
+If you are in the same situation, you will have to setup a CNAME pointing to the Netlify domain name assigned to you. Don't forget this will take time for the DNS entry to propagate over the internel and work (from minutes to hours).
+
+** Issues found after my first post
+
+Someone spotted a broken link in my /about/ page. Turns out the default version of Hugo used on Netlify does not properly support org-mode.
+
+I updated with success the ENVIRONMENT variable HUGO_VERSION to 0.71.1 and it did fix the issue.
+
+I ended up creating a Netlify.toml in my site root to control the Netlify build.
+
+** Some reflection
+
+I did managed to get out of the software / technology faster than I thought.
+
+The danger for me was to spend all my time customizing tools and not writing a single post. I would have learned something for sure, but missed other learning opportunities.
+
+I hope others can find this helpful and start a blog.
+
+For me, if I reach 10 posts, I think I'll be on the right track :)
+
+** Coming next
+
+Some topics I may write about:
+
+- Detecting possible broken [[https://en.wikipedia.org/wiki/Single-responsibility_principle][SRP]] using your git history
+- Automated testing quality. Why coverage is not enough.
+- how to resolve git conflicts. One possible example: merge conflicting patches on a suckless tool like st or dwm.
+- note taking setup I use (org-mode, org-roam, deft)
+- Replacing IntelliJ as my daily driver IDE with Emacs LSP Java
+- plain text diagrams
+  - plantuml / graphviz
+  - C4 models macros for plantuml
+  - branching models
+  - network diagrams
+- homelab
+- linux at work
+- possibly some backyard work I'm currently working on.
+- maybe some electronics projects I have in my queue
+
+Some improvements to the site I have on my list:
+- Broken link detection. Try to enable the link check plugin (beta) on netlify.
+- enable some sort of spellcheck approval on my posts.
+- no taxonomy pages or list. I'm tagging my posts, but nothing visible yet.
+- not satisfied with the auto summary formatting. I ended up marking the summary to get formatting right.
+- relationship between summary, RSS and index page. Maybe RSS should have Content instead of summary but keep index with shorter summary.
+- Will try HTML5 templates and make changes to the presentation in the CSS. I've got a theme to get me started, but not sure I'll keep it.
+- Possibly try new.CSS
+- see if ox-Hugo helps once I really understand how Hugo works.
+
+/This is day 2 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
+
+# needed to get a proper formatted summary in index page and rss
+# <!--more-->
