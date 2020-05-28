@@ -8,8 +8,6 @@ tags:
 - blogging
 ---
 
-[[https://blog.benoitj.ca/brokenlink][brokenlink]]
-
 In this second post, I'll go over my thought process to create / publish a blog using markup languages and couple of tools.
 
 The objective of my setup was to be done quickly so I can write something else than software configuration :)
