@@ -26,6 +26,8 @@ My hopes for my blogging setup:
 
 *Disclaimer*: There are much easier way to get started using platforms like Wordpress or write.as. This solution is tailored to what I'm comfortable doing, it may not be the right solution for you.
 
+*Disclaimer2*: This is not a howto guide, but hopefully source of inspiration.
+
 ** Build the site
 
 Couple of options I've looked at:
