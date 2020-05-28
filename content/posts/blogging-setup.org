@@ -8,9 +8,11 @@ tags:
 - blogging
 ---
 
-In this second post, I'll go over solutions to get going within one day. I wanted this to be quick so I can write something else than blog setup :)
+In this second post, I'll go over solutions to get going within one day.
 
-My hope for blogging setup:
+The objective of my setup was to be done quickly so I can write something else than software configuration :)
+
+My hopes for the blogging setup:
 
 1. something I can use from day one, get out of the way, and allow me to improve at a later time
 2. automated build and deploy
@@ -19,7 +21,7 @@ My hope for blogging setup:
    1. presentation in a super simple CSS
    2. use HTML5
 
-Spoiler alert: it's possible to get most of these up and running in one day, if you accept some compromise and don't get stuck on issues that have little impact.
+Spoiler alert: it's possible to get up and running in one day, if you accept some compromise and don't get stuck on issues that have little impact.
 
 ** Build the site
 
@@ -116,11 +118,11 @@ The danger for me was to spend all my time customizing tools and not writing a s
 
 I hope others can find this helpful and start a blog.
 
-For me, if I reach 10 posts, I think I'll be on the right track :)
+I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right track :)
 
 ** Coming next
 
-Some topics I may write about:
+*** Some topics I may write about
 
 - Detecting possible broken [[https://en.wikipedia.org/wiki/Single-responsibility_principle][SRP]] using your git history
 - Automated testing quality. Why coverage is not enough.
@@ -137,7 +139,10 @@ Some topics I may write about:
 - possibly some backyard work I'm currently working on.
 - maybe some electronics projects I have in my queue
 
-Some improvements to the site I have on my list:
+
+
+*** Some improvements to the site I have on my list
+
 - Broken link detection. Try to enable the link check plugin (beta) on netlify.
 - enable some sort of spellcheck approval on my posts.
 - no taxonomy pages or list. I'm tagging my posts, but nothing visible yet.
