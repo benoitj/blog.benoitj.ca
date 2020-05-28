@@ -1,33 +1,36 @@
 ---
 title: "Blogging Setup"
 date: 2020-05-24T21:25:51-04:00
-draft: true
+draft: false
 categories:
 - tech
 tags:
 - blogging
 ---
 
-In this second post, I'll go over solutions to get going within one day.
+In this second post, I'll go over my thought process to create / publish a blog using markup languages and couple of tools.
 
 The objective of my setup was to be done quickly so I can write something else than software configuration :)
 
-My hopes for the blogging setup:
+My hopes for my blogging setup:
 
 1. something I can use from day one, get out of the way, and allow me to improve at a later time
 2. automated build and deploy
-3. use a markup language like commonmark/markdown, org-mode, or asciidoc. Preferably org-mode since I want to use org babel with code blocs.
+3. use a markup language like commonmark/markdown, org-mode, or Asciidoc. Preferably org-mode since I want to use org babel with code blocs.
 4. simple
    1. presentation in a super simple CSS
    2. use HTML5
+5. learn something I haven't done before
 
-Spoiler alert: it's possible to get up and running in one day, if you accept some compromise and don't get stuck on issues that have little impact.
+*Spoiler alert*: it's possible to get up and running in one day, if you accept some compromise and don't get stuck on trying to make everything perfect.
+
+*Disclaimer*: There are much easier way to get started using platforms like Wordpress or write.as. This solution is tailored to what I'm comfortable doing, it may not be the right solution for you.
 
 ** Build the site
 
 Couple of options I've looked at:
 
-1. use something like pandoc with couple of shell scripts or makefiles
+1. use something like pandoc with couple of shell scripts or Makefiles
    Great to convert single files. Could have worked for a 1 day setup, but not necessarily easy to get going on a free CI platform. Also a I bit too custom to my liking if I want to create templates, archetypes. All possible, but I suspect too needy.
 2. use org publish with plain org files
    Not too convinced with this one. It feels like pandoc, but in Emacs :). Easy to start, but would not be great to integrate with a CI platform.
@@ -43,17 +46,17 @@ Couple of options I've looked at:
 Followed the Hugo getting started and got a two dummy post created.
 
 This is really easy to get [[https://gohugo.io/getting-started/quick-start/][started]]. Here are the main steps:
+
 1. create a site
 2. associate a theme
 3. create some posts
 4. run Hugo in server mode and open up your browser to http://localhost:1313
 
-
 That's all you need to get started.
 
 ** The hardest part is yet to come. Teeming and Rendering.
 
-I really like clean and simple. Now there are many nice clean/simple theme on Hugo site, but the ones I liked had big css and many even made use of javascript. Also, none made use of simpler elements defined in HTML5.
+I really like clean and simple. Now there are many nice clean/simple theme on Hugo site, but the ones I liked had big CSS and many even made use of JavaScript. Also, none made use of simpler elements defined in HTML5.
 
 What I was looking for was in the spirit the opinionated [[https://thebestmotherfucking.website/][thebestmotherfuckingwebsite]].
 
@@ -71,8 +74,8 @@ At this point, it's good enough visually, on my laptop... No time to waste, next
 ** Deployment
 
 Some hope for deployment:
-- integrates with either GitHub or bitbucket (hosted accounts I have)
-- build my Hugo site from sources on some my public repos.
+- integrates with either GitHub or Bitbucket (hosted accounts I have)
+- build my Hugo site from sources on some my public repositories.
 - support custom domain
 - something I would not have to read much about
 
@@ -88,7 +91,7 @@ First hit: [[https://gohugo.io/hosting-and-deployment/hosting-on-netlify/][Host 
 
 That's it, I have my solution :)
 
-Followed the guide, starting with the dummy site above. I ended up swapping it with this a new github repo [[https://github.com/benoitj/blog.benoitj.ca][GitHub - benoitj/blog.benoitj.ca: my blog sources]].
+Followed the guide, starting with the dummy site above. I ended up swapping it with this a new github repository [[https://github.com/benoitj/blog.benoitj.ca][GitHub - benoitj/blog.benoitj.ca: my blog sources]].
 
 Now each time I push new changes, I can see it on the generated netlify domain.
 
@@ -100,15 +103,53 @@ I already own one, so after a bit of research found the Netlify guide to [[https
 
 Finding the doc was the hardest part, Netlify appears to sell domains in addition to website hosting. So the first few guides are over setting up Netlify DNS.
 
-If you are in the same situation, you will have to setup a CNAME pointing to the Netlify domain name assigned to you. Don't forget this will take time for the DNS entry to propagate over the internel and work (from minutes to hours).
+If you are in the same situation, you will have to setup a CNAME pointing to the Netlify domain name assigned to you. Don't forget this will take time for the DNS entry to propagate over the Internet and work (from minutes to hours).
 
-** Issues found after my first post
+** Improvements since the first post
+*** Broken links
 
 Someone spotted a broken link in my /about/ page. Turns out the default version of Hugo used on Netlify does not properly support org-mode.
 
 I updated with success the ENVIRONMENT variable HUGO_VERSION to 0.71.1 and it did fix the issue.
 
-I ended up creating a Netlify.toml in my site root to control the Netlify build.
+I ended up creating a netlify.toml in my site root to control the Netlify build.
+
+Here is the minimum setup in netlify.toml:
+
+#+BEGIN_SRC toml
+[build]
+publish = "public"
+command = "hugo --gc --minify"
+
+[context.production.environment]
+HUGO_VERSION = "0.71.1"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+#+END_SRC
+
+*** Enable broken link detection on netlify
+
+It's now possible to enable [[https://github.com/munter/netlify-plugin-checklinks/blob/master/README.md][checklinks]] plugin on netlify.
+
+Since I already have a netlify.toml config to control the build, it's just a matter of adding this to it:
+
+#+BEGIN_SRC toml
+[[plugins]]
+package = "netlify-plugin-checklinks"
+#+END_SRC
+
+*** Site improvements TODO
+
+Here is my unsorted list of things I may improve:
+
+- +Broken link detection. Try to enable the link check plugin (beta) on netlify.+
+- Create taxonomy pages or list. I'm tagging my posts, but nothing visible yet.
+- improve how code is displayed. probably need to play with the template / CSS
+- Will try HTML5 templates and make changes to the presentation in the CSS. I've got a theme to get me started, but not sure I'll keep it. Possibly try new.CSS
+- enable some sort of spellcheck approval on my posts.
+- not satisfied with the auto summary formatting. I ended up marking the summary to get formatting right.
+- relationship between summary, RSS and index page. Maybe RSS should have Content instead of summary but keep index with shorter summary.
+- see if ox-Hugo helps once I really understand how Hugo works.
 
 ** Some reflection
 
@@ -116,7 +157,7 @@ I did managed to get out of the software / technology faster than I thought.
 
 The danger for me was to spend all my time customizing tools and not writing a single post. I would have learned something for sure, but missed other learning opportunities.
 
-I hope others can find this helpful and start a blog.
+I hope others can find this helpful.
 
 I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right track :)
 
@@ -141,16 +182,6 @@ I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right tra
 
 
 
-*** Some improvements to the site I have on my list
-
-- Broken link detection. Try to enable the link check plugin (beta) on netlify.
-- enable some sort of spellcheck approval on my posts.
-- no taxonomy pages or list. I'm tagging my posts, but nothing visible yet.
-- not satisfied with the auto summary formatting. I ended up marking the summary to get formatting right.
-- relationship between summary, RSS and index page. Maybe RSS should have Content instead of summary but keep index with shorter summary.
-- Will try HTML5 templates and make changes to the presentation in the CSS. I've got a theme to get me started, but not sure I'll keep it.
-- Possibly try new.CSS
-- see if ox-Hugo helps once I really understand how Hugo works.
 
 /This is day 2 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
