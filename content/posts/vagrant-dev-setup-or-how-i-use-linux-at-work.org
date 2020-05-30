@@ -1,0 +1,51 @@
+---
+title: "Vagrant Dev Setup or How I Use Linux at Work"
+date: 2020-05-29T11:31:24-04:00
+draft: true
+categories:
+- tech
+tags:
+- linux
+- coding
+- tools
+---
+
+Most coders is large companies are facing the same situation: We develop for Linux servers, but we are running on Windows or MacOS boxes.
+
+** Absurd situation in many big companies
+
+One thing that strikes me over all these years, is that we never tell Managers not to use Excel, we never tell mechanics not to use a certain rench, but we get told by IT and management which tools not to use. There are reasons for this, but I think it's time for the coders community to step up and get back the control over their tools.
+
+I've been working hard at my current employer and collaborating with our IT department to get Linux laptops. I've had some success and this will be the topic of a future post.
+
+For the time being, this post is about how I manage to run all the tooling I want to use on my Windows OS.
+
+
+** Here comes Vagrant
+
+For those who dont know, [[https://www.vagrantup.com/][Vagrant by HashiCorp]] is a VM provisioning tool targetted at spawning development centric boxes. I've used Vagrant for the last 3-4 years to quickly get a Linux development VM running on my Windows Desktop.
+
+Vagrant support various VM/Hyperviser platforms like libvirt/KVM (Linux), MS HyperV (Win), [[https://www.virtualbox.org][Oracle VM VirtualBox]] (both), VMWare
+
+I've been using Virtualbox on Windows Host and even though HyperV could be an option, it's not the best one. After trying it for 1-2 days, I don't think it give a better user experience, especially being RDP based, you constantly have to reconnect to your VM due to timeouts. Also the integration with the Host OS does not come close to VirtualBox with guest additions. Even though I'm not a fan of Oracle, I still think Virtualbox is a better tool for this situation.
+
+** Installing
+
+Installing is pretty easy and comes to three steps if you're on Windows 10. If your company hasnt moved to Windows 10, did they get the Memo that Windows 7 is EOL?
+
+1. Enable VT-x or similar virtualization capability in your BIOS if not yet enabled. If not enabled, Virtualbox wont be able to give you hardware virtualization. You may need your IT to enable this if they password protected your BIOS.
+2. Install [[https://www.virtualbox.org/wiki/Downloads][Oracle VM VirtualBox]] and optionally the Oracle VM VirtualBox Extension Pack which gives you host bridging with USB 2.0/3.0 devices.
+3. [[https://www.vagrantup.com/][Vagrant by HashiCorp]]
+
+** TODO Creating your first VM
+
+** TODO Hopes for my new development configuration
+
+1. Based on Arch
+2. basic X with my dwm/st/dmenu forks
+3. Guest additions installed
+4. My dotfiles installed using [[https://www.chezmoi.io/][chezmoi.io]]
+5. Provision some tools like sdkman, emacs using scripts in chezmoi.
+
+# needed to get a proper formatted summary in index page and rss
+# <!--more-->
