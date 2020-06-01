@@ -1,5 +1,5 @@
 ---
-title: "How I Use Linux at Work - Part 1 - Basic setup"
+title: "How I Use Linux Desktop at Work - Part 1 - Basic setup"
 date: 2020-05-29T11:31:24-04:00
 draft: false
 categories:
@@ -8,6 +8,7 @@ tags:
 - Linux
 - coding
 - tools
+- vm
 ---
 
 Most coders is large companies are facing the same situation: We develop for Linux servers, but we are running on Windows or MacOS boxes.
@@ -163,6 +164,8 @@ vagrant destroy
 As you can see, Vagrant helps you setup a minimal Linux OS running in a VM in just a few steps.
 
 This is way more efficient than installing from ISO and going through the installation.
+
+Coming next will be part 2, addressing basic X setup as well as tweaking the VM configuration using the same VagrantFile.
 
 /This is day 3 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
