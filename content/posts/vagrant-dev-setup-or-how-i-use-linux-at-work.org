@@ -1,7 +1,7 @@
 ---
-title: "How I Use Linux at Work - Part 1 - Vagrant setup"
+title: "How I Use Linux at Work - Part 1 - Basic setup"
 date: 2020-05-29T11:31:24-04:00
-draft: true
+draft: false
 categories:
 - tech
 tags:
@@ -131,9 +131,7 @@ In the end of the process, you should have a VM provisioned and started.
 From the same vagrant folder, you can connect to your box using ssh with keys generated for your:
 
 #+BEGIN_SRC powershell
-
 vagrant ssh
-
 #+END_SRC
 
 You are now connected to your box using SSH.
@@ -149,9 +147,7 @@ You may have noted that vagrant mounted //vagrant/ to your local vagrant folder.
 Another useful command, is you can tell vagrant to shutdown the VM using:
 
 #+BEGIN_SRC powershell
-
 vagrant halt
-
 #+END_SRC
 
 *** Destroying your box
@@ -159,9 +155,7 @@ vagrant halt
 Since this is just a test box, you may want to delete the VM:
 
 #+BEGIN_SRC powershell
-
 vagrant destroy
-
 #+END_SRC
 
 
