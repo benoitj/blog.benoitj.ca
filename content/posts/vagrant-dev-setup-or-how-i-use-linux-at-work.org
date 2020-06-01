@@ -158,6 +158,11 @@ Since this is just a test box, you may want to delete the VM:
 vagrant destroy
 #+END_SRC
 
+** What I get out of this
+
+As you can see, Vagrant helps you setup a minimal Linux OS running in a VM in just a few steps.
+
+This is way more efficient than installing from ISO and going through the installation.
 
 /This is day 3 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
