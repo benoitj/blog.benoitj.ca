@@ -11,6 +11,9 @@ theme = "mymotherfuckingwebsite"
   dateform = "2006-01-02"
   author = "Benoit J"
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [markup]
   [markup.highlight]
     codeFences = true

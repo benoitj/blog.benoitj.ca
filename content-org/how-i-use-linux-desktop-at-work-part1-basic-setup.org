@@ -1,15 +1,15 @@
----
-title: "How I Use Linux Desktop at Work - Part 1 - Basic setup"
-date: 2020-05-29T11:31:24-04:00
-draft: false
-categories:
-- tech
-tags:
-- Linux
-- coding
-- tools
-- vm
----
+#+hugo_base_dir: ../
+#+hugo_section: posts
+
+#+hugo_auto_set_lastmod: f
+
+#+date: 2020-05-29T11:31:24-04:00
+#+hugo_categories: tech
+#+hugo_tags: Linux coding tools vm \#100DaysToOffload
+
+#+hugo_draft: false
+
+#+title: How I Use Linux Desktop at Work - Part 1 - Basic setup
 
 Most coders is large companies are facing the same situation: We develop for Linux servers, but we are running on Windows or MacOS boxes.
 
@@ -19,10 +19,10 @@ We need a solution and [[https://www.vagrantup.com][Vagrant]] is a quick way to 
 
 This will be a series of posts starting with these 4 topics:
 
-*** Part 1: Basic setup
-*** Part 2: Getting basic X setup
-*** Part 3: Make it your own. Dotfiles and development environments
-*** Part 4: Variants using boxes from Linux OS
+  1. Basic setup
+  2. Getting basic X setup
+  3. Make it your own. Dotfiles and development environments
+  4. Variants using boxes from Linux OS
 
 ** Why Vagrant
 For those who don't know, [[https://www.vagrantup.com/][Vagrant by HashiCorp]] is a VM provisioning tool targeted at spawning software development boxes. I've used Vagrant for the last 3-4 years to quickly get a Linux development VM running on my Windows Desktop.
@@ -170,4 +170,4 @@ Coming next will be part 2, addressing basic X setup as well as tweaking the VM 
 /This is day 3 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
 # needed to get a proper formatted summary in index page and rss
-# <!--more-->
+#+hugo: more

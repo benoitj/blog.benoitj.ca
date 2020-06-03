@@ -1,13 +1,15 @@
----
-title: "I should try blogging"
-date: 2020-05-24T00:02:13-04:00
-draft: false
-categories:
-- general
-tags:
-- blogging
-- #100DaysToOffload
----
+#+hugo_base_dir: ../
+#+hugo_section: posts
+
+#+hugo_auto_set_lastmod: f
+
+#+date: 2020-05-24T00:02:13-04:00
+#+hugo_categories: general
+#+hugo_tags: blogging \#100DaysToOffload
+
+#+hugo_draft: false
+
+#+title: I should try blogging
 
 Like many, I've been thinking about sharing using a personal blog. Like many, I've been procrastinating about it :).
 
@@ -26,4 +28,4 @@ As a constant learner, constructive feedbacks are always welcomed. See my [[/abo
 
 /This is Day 1 of my #100DaysToOffload/
 
-# <!--more-->
+#+hugo: more

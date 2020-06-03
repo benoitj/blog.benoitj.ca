@@ -1,12 +1,15 @@
----
-title: "Blogging Setup"
-date: 2020-05-24T21:25:51-04:00
-draft: false
-categories:
-- tech
-tags:
-- blogging
----
+#+hugo_base_dir: ../
+#+hugo_section: posts
+
+#+hugo_auto_set_lastmod: f
+
+#+date: 2020-05-24T21:25:51-04:00
+#+hugo_categories: tech
+#+hugo_tags: blogging \#100DaysToOffload
+
+#+hugo_draft: false
+
+#+TITLE: Blogging Setup
 
 In this second post, I'll go over my thought process to create / publish a blog using markup languages and couple of tools.
 
@@ -188,4 +191,4 @@ I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right tra
 /This is day 2 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
 # needed to get a proper formatted summary in index page and rss
-# <!--more-->
+#+hugo: more
