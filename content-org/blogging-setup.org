@@ -5,7 +5,7 @@
 
 #+date: 2020-05-24T21:25:51-04:00
 #+hugo_categories: tech
-#+hugo_tags: blogging \#100DaysToOffload
+#+hugo_tags: blogging 100DaysToOffload
 
 #+hugo_draft: false
 

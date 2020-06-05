@@ -5,7 +5,7 @@
 
 #+date: 2020-05-29T11:31:24-04:00
 #+hugo_categories: tech
-#+hugo_tags: Linux coding tools vm \#100DaysToOffload
+#+hugo_tags: Linux coding tools vm 100DaysToOffload
 
 #+hugo_draft: false
 
