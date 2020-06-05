@@ -1,11 +1,11 @@
 +++
-title = "How I Use Linux Desktop at Work - Part 1 - Basic setup"
+title = "How I Use Linux Desktop at Work - Part 2 - WM"
 author = ["Benoit Joly"]
-date = 2020-05-29T11:31:24-04:00
-lastmod = 2020-06-05T00:07:57-04:00
+date = 2020-06-05T11:31:24-04:00
+lastmod = 2020-06-05T00:14:15-04:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
-draft = false
+draft = true
 +++
 
 Most coders is large companies are facing the same situation: We develop for Linux servers, but we are running on Windows or MacOS boxes.

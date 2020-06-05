@@ -2,7 +2,7 @@
 title = "Blogging Setup"
 author = ["Benoit Joly"]
 date = 2020-05-24T21:25:51-04:00
-lastmod = 2020-06-04T21:31:20-04:00
+lastmod = 2020-06-05T00:04:10-04:00
 tags = ["blogging", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -181,7 +181,7 @@ I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right tra
 ## Coming next {#coming-next}
 
 
-### Some topics I may write about {#some-topics-i-may-write-about}
+## Some topics I may write about {#some-topics-i-may-write-about}
 
 -   Detecting possible broken [SRP](https://en.wikipedia.org/wiki/Single-responsibility%5Fprinciple) using your git history
 -   Automated testing quality. Why coverage is not enough.
@@ -199,5 +199,3 @@ I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right tra
 -   maybe some electronics projects I have in my queue
 
 _This is day 2 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
-
-<!--more-->

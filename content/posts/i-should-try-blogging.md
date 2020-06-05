@@ -2,7 +2,7 @@
 title = "I should try blogging"
 author = ["Benoit Joly"]
 date = 2020-05-24T00:02:13-04:00
-lastmod = 2020-06-04T21:31:46-04:00
+lastmod = 2020-06-05T00:04:41-04:00
 tags = ["blogging", "100DaysToOffload"]
 categories = ["general"]
 draft = false
@@ -24,5 +24,3 @@ I intent to post twice a week. We'll see how long I can keep the blogging procra
 As a constant learner, constructive feedbacks are always welcomed. See my [about](/about) page for contact info.
 
 _This is Day 1 of my #100DaysToOffload_
-
-<!--more-->

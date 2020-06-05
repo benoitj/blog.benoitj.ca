@@ -24,7 +24,7 @@ This will be a series of posts starting with these 4 topics:
   3. Make it your own. Dotfiles and development environments
   4. Variants using boxes from Linux OS
 
-** Why Vagrant
+* Why Vagrant
 For those who don't know, [[https://www.vagrantup.com/][Vagrant by HashiCorp]] is a VM provisioning tool targeted at spawning software development boxes. I've used Vagrant for the last 3-4 years to quickly get a Linux development VM running on my Windows Desktop.
 
 Vagrant support various VM/Hypervisor platforms like libvirt/KVM (Linux), MS HyperV (Win), [[https://www.virtualbox.org][Oracle VM VirtualBox]] (both), VMWare
@@ -38,7 +38,7 @@ There are couple of reasons to use this setup to configure a Linux development e
 4. Develop on the same OS as your target OS
 5. You can use vagrant to setup a set of VMs that works together (things like a Kubernetes cluster)
 
-** Virtualization
+* Virtualization
 
 There are couple of [[https://www.vagrantup.com/docs/providers][choices]] of virtualization platform:
 1. Virtualbox
@@ -56,11 +56,11 @@ In short, why others are lesser capable IMHO:
 - WSL: First, support for WSL in Vagrant is beta. It's also only text based (I know you can go around it). Not really giving what you need compared to the alternatives
 - WSL2: There are some tickets open to support WSL2. This may be a viable option in the future. Maybe this will bridge the gap between HyperV and Virtualbox with regards to seamless integration with the host OS. Too early to tell.
 
-** Basic setup
+* Basic setup
 
 The aim of this first part is to get a prompt on the Guest OS of choice, in this case Arch, but it could be any other Linuxes.
 
-*** Enable virtualization
+** Enable virtualization
 
 To make things fast, we need to use Virtualization implemented using Hardware virtualization capabilities of your PC. In theory, software based virtualization could work, but it's far from being usable if you want to run X and a window manager (ie: way too slow).
 
@@ -69,13 +69,13 @@ Most PC these days support Hardware virtualization (even my old x220 from 2012),
 
 You can enable virtualization by going to your BIOS and enabling hardware virtualization. It can have various names, VT-x, Virtualization, or something similar. If not enabled, Virtualbox wont be able to give you hardware virtualization. If this is on your work PC, you may need your IT department to enable this if they password protected your BIOS.
 
-*** Install Virtualbox
+** Install Virtualbox
 
 Install [[https://www.virtualbox.org/wiki/Downloads][Oracle VM VirtualBox]]. In my case, I install the VirtualBox for Windows Host.
 
 You can optionally install the Oracle VM VirtualBox Extension Pack which gives you host bridging with USB 2.0/3.0 devices. This is required if you want to pass-through a USB 2.0 or 3.0 device connected to your host directly to your VM.
 
-*** Vagrant
+** Vagrant
 
 Vagrant requires newer version of Powershell to be able to install. Windows 10 has the right version and I'll assume you are on Windows 10 since other versions are EOL.
 
@@ -83,7 +83,7 @@ Head over [[https://www.vagrantup.com/][Vagrant by HashiCorp]] and download vagr
 
 Installation should be trivial.
 
-*** Vagrant Box selection
+** Vagrant Box selection
 
 Time for box selection. A vagrant box is a pre-configured bare VM that you can download and start. It's the VM equivalent to a docker image.
 
@@ -97,7 +97,7 @@ I would recommend to take boxes from reputable sources, or build you own (which 
 
 To test the setup, I'll just select a small VM for alpine: /generic/alpine38/
 
-*** VagrantFile
+** VagrantFile
 
 Vagrant is configured in a similar way to docker, with a VagrantFile used to "build" your VM.
 
@@ -118,7 +118,7 @@ Vagrant.configure("2") do |config|
 end
 #+END_SRC
 
-*** Booting the box
+** Booting the box
 
 Now that your configuration file is created, run the following command in a powershell in the created directory:
 
@@ -127,7 +127,7 @@ vagrant up
 #+END_SRC
 
 In the end of the process, you should have a VM provisioned and started.
-*** Connect to your box
+** Connect to your box
 
 From the same vagrant folder, you can connect to your box using ssh with keys generated for your:
 
@@ -139,11 +139,11 @@ You are now connected to your box using SSH.
 
 You can now disconnect from SSH (ie: exit or ^d)
 
-*** Sharing files using default /vagrant folder
+** Sharing files using default /vagrant folder
 
 You may have noted that vagrant mounted //vagrant/ to your local vagrant folder. In your box, you can share files from that folder. There are ways to mount additional folders and we'll go over this in a later post.
 
-*** Shutting down
+** Shutting down
 
 Another useful command, is you can tell vagrant to shutdown the VM using:
 
@@ -151,7 +151,7 @@ Another useful command, is you can tell vagrant to shutdown the VM using:
 vagrant halt
 #+END_SRC
 
-*** Destroying your box
+** Destroying your box
 
 Since this is just a test box, you may want to delete the VM:
 
@@ -159,7 +159,7 @@ Since this is just a test box, you may want to delete the VM:
 vagrant destroy
 #+END_SRC
 
-** What I get out of this
+* What I get out of this
 
 As you can see, Vagrant helps you setup a minimal Linux OS running in a VM in just a few steps.
 
@@ -169,5 +169,6 @@ Coming next will be part 2, addressing basic X setup as well as tweaking the VM 
 
 /This is day 3 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
-# needed to get a proper formatted summary in index page and rss
+* Footnotes
+
 #+hugo: more

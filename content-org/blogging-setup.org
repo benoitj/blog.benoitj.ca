@@ -31,7 +31,7 @@ My hopes for my blogging setup:
 
 *Disclaimer2*: This is not a howto guide, but hopefully source of inspiration.
 
-** Build the site
+* Build the site
 
 Couple of options I've looked at:
 
@@ -46,7 +46,7 @@ Couple of options I've looked at:
    Since I have some hope to use ox-hugo in the future, I did try to get Hugo working for my blog.
    Hugo also support org-mode in addition to markdown.
 
-** Prototyping
+* Prototyping
 
 Followed the Hugo getting started and got a two dummy post created.
 
@@ -59,7 +59,7 @@ This is really easy to get [[https://gohugo.io/getting-started/quick-start/][sta
 
 That's all you need to get started.
 
-** The hardest part is yet to come. Teeming and Rendering.
+* The hardest part is yet to come. Teeming and Rendering.
 
 I really like clean and simple. Now there are many nice clean/simple theme on Hugo site, but the ones I liked had big CSS and many even made use of JavaScript. Also, none made use of simpler elements defined in HTML5.
 
@@ -76,7 +76,7 @@ The templates and CSS are quite simple but not HTML5.
 
 At this point, it's good enough visually, on my laptop... No time to waste, next step!
 
-** Deployment
+* Deployment
 
 Some hope for deployment:
 - integrates with either GitHub or Bitbucket (hosted accounts I have)
@@ -100,7 +100,7 @@ Followed the guide, starting with the dummy site above. I ended up swapping it w
 
 Now each time I push new changes, I can see it on the generated netlify domain.
 
-** domain name
+* domain name
 
 Now, lets get a custom domain setup.
 
@@ -110,8 +110,8 @@ Finding the doc was the hardest part, Netlify appears to sell domains in additio
 
 If you are in the same situation, you will have to setup a CNAME pointing to the Netlify domain name assigned to you. Don't forget this will take time for the DNS entry to propagate over the Internet and work (from minutes to hours).
 
-** Improvements since the first post
-*** Broken links
+* Improvements since the first post
+** Broken links
 
 Someone spotted a broken link in my /about/ page. Turns out the default version of Hugo used on Netlify does not properly support org-mode.
 
@@ -132,7 +132,7 @@ HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 #+END_SRC
 
-*** Enable broken link detection on netlify
+** Enable broken link detection on netlify
 
 It's now possible to enable [[https://github.com/munter/netlify-plugin-checklinks/blob/master/README.md][checklinks]] plugin on netlify.
 
@@ -143,7 +143,7 @@ Since I already have a netlify.toml config to control the build, it's just a mat
 package = "netlify-plugin-checklinks"
 #+END_SRC
 
-*** Site improvements TODO
+** Site improvements TODO
 
 Here is my unsorted list of things I may improve:
 
@@ -156,7 +156,7 @@ Here is my unsorted list of things I may improve:
 - relationship between summary, RSS and index page. Maybe RSS should have Content instead of summary but keep index with shorter summary.
 - see if ox-Hugo helps once I really understand how Hugo works.
 
-** Some reflection
+* Some reflection
 
 I did managed to get out of the software / technology faster than I thought.
 
@@ -166,9 +166,8 @@ I hope others can find this helpful.
 
 I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right track :)
 
-** Coming next
-
-*** Some topics I may write about
+* Coming next
+* Some topics I may write about
 
 - Detecting possible broken [[https://en.wikipedia.org/wiki/Single-responsibility_principle][SRP]] using your git history
 - Automated testing quality. Why coverage is not enough.
@@ -190,5 +189,5 @@ I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right tra
 
 /This is day 2 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
-# needed to get a proper formatted summary in index page and rss
+* Footnotes
 #+hugo: more
