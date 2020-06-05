@@ -2,8 +2,8 @@
 title = "Blogging Setup"
 author = ["Benoit Joly"]
 date = 2020-05-24T21:25:51-04:00
-lastmod = 2020-06-03T01:07:03-04:00
-tags = ["blogging", "#100DaysToOffload"]
+lastmod = 2020-06-04T21:31:20-04:00
+tags = ["blogging", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
 +++

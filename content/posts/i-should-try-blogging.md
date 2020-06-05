@@ -2,8 +2,8 @@
 title = "I should try blogging"
 author = ["Benoit Joly"]
 date = 2020-05-24T00:02:13-04:00
-lastmod = 2020-06-03T01:06:55-04:00
-tags = ["blogging", "#100DaysToOffload"]
+lastmod = 2020-06-04T21:31:46-04:00
+tags = ["blogging", "100DaysToOffload"]
 categories = ["general"]
 draft = false
 +++
