@@ -2,7 +2,7 @@
 title = "How I Use Linux Desktop at Work - Part 1 - Basic setup"
 author = ["Benoit Joly"]
 date = 2020-05-29T11:31:24-04:00
-lastmod = 2020-06-05T00:07:57-04:00
+lastmod = 2020-06-05T00:20:04-04:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = false

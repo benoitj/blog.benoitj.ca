@@ -1,13 +1,15 @@
----
-title: "How I use Linux desktop at work - Part2 - Windown manager and GUI"
-date: 2020-06-02T17:01:42-04:00
-draft: true
-markup: org
-categories:
-- undef
-tags:
-- undef
----
+#+hugo_base_dir: ../
+#+hugo_section: posts
+
+#+hugo_auto_set_lastmod: f
+
+#+date: 2020-06-05T11:31:24-04:00
+#+hugo_categories: tech
+#+hugo_tags: Linux coding tools vm 100DaysToOffload
+
+#+hugo_draft: true
+
+#+title: How I use Linux desktop at work - Part2 - Windown manager and GUI
 
 Part 2 of the series /How I use Linux desktop at work/
 
@@ -19,59 +21,34 @@ In the post, we go over:
 3. install X related packages
 4. Install one Window Manager (TBD: Mate?, xfce?, Cinnamon? )
 
-- [ ] unordered list item 1
--
+* Creating the basic arch VM
 
-  list item with empty first and second line \\
-  normally an empty line breaks the list item - but we make an exception for the first line and don't count it towards that limit
-- unordered list item 2 - with ~inline~ /markup/
-  1. [-] ordered sublist item 1
-     a) [X] ordered sublist item 1
-     b) [ ] ordered sublist item 2
-     c) [X] ordered sublist item 3
-  2. ordered sublist item 2
-  3.
+This will be an arch based vagrant VM, and I'll use the official arch vagrant box:
 
-     list item with empty first and second line - see above
-- [X] unordered list item 3 - and a [[https://example.com][link]]
-  and some lines of text
-  1. and another subitem
-     #+BEGIN_SRC sh
-     echo with a block
-     #+END_SRC
-  2. and another one with a table
-     | a | b | c |
-     |---+---+---|
-     | 1 | 2 | 3 |
+#+BEGIN_SRC bash
+mkdir devbox-arch
+cd devbox-arch
+vagrant init archlinux/archlinux
+#+END_SRC
 
-     and text with an empty line in between as well!
-- unordered list item 4
-  : with an example
-  :
-  : that spans multiple lines
+That's it. Lets try it:
 
+#+BEGIN_SRC bash
+vagrant up
+vagrant ssh
+uname -a
+#+END_SRC
 
-descriptive lists
-- [ ] term :: details
-          continued details
-- [ ] details without a term
-- [X] term ::
-          details on a new line
-- term ::
+* configure memory/cpu and disk allocation
 
-          details on a new line (with an empty line in between)
-          *continued*
-          #+BEGIN_SRC bash
-          echo "Hello World!"
-          #+END_SRC
+This is good enough for console, but if we are going to use this for a development VM running X, we need to allocate more resources, setup graphic properties, setup host/guest integration.
 
-some list termination tests
+here is what the vagrant file looks like now:
 
-- unordered 1
-- unordered 2
-1. ordered 1
-2. ordered 2
+#+BEGIN_SRC ruby :file Vagrantfile
+TODO=123
+#+END_SRC
 
-
+* Footnotes
 # needed to get a proper formatted summary in index page and rss
 # <!--more-->
