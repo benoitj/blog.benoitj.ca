@@ -1,11 +1,11 @@
 +++
 title = "How I use Linux desktop at work - Part2 - Window manager and GUI"
 author = ["Benoit Joly"]
-date = 2020-06-08T11:31:24-04:00
-lastmod = 2020-06-09T15:57:17-04:00
+date = 2020-06-09T16:31:24-04:00
+lastmod = 2020-06-09T16:34:34-04:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
-draft = true
+draft = false
 +++
 
 Part 2 of the series _How I use Linux desktop at work_
