@@ -24,6 +24,8 @@ In the post, we go over:
 
 The end result is a versioned configuration that can provision a basic arch VM with X and a window manager.
 
+*Note*: You can find the sources created during this post in my github [[https://github.com/benoitj/devbox-arch/tree/part2][devbox-arch]] repository.
+
 * Pre-requisite
 
 Stuff assumed to be configured before starting and already covered in [[https://blog.benoitj.ca/2020-05-29-how-i-use-linux-desktop-at-work-part1-basic-setup/][part1]]:
@@ -156,8 +158,6 @@ The setup arch contains instructions to:
  2. configure pacman to use a regional mirror
  3. update the package list and update with any new package versions
 
-For details, look at the source [[http://broken][here]].
-
 * Getting X environment working
 
 Same as with arch config, I'm using a script to setup X and related software.
@@ -179,8 +179,6 @@ Some objectives for the core provisioning script is:
 Now you should see a GUI login prompt with the vagrant user selected. You can enter the super secret password (ie: vagrant).
 
 *Warning*: The vagrant account is safe as long as you don't weaken the existing setup (like: enable services using password authentication).
-
-For details, look at the source [[http://broken][here]].
 
 ** Time to speed up
 

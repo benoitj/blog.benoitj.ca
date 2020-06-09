@@ -2,7 +2,7 @@
 title = "How I use Linux desktop at work - Part2 - Window manager and GUI"
 author = ["Benoit Joly"]
 date = 2020-06-08T11:31:24-04:00
-lastmod = 2020-06-08T23:55:33-04:00
+lastmod = 2020-06-09T15:57:17-04:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = true
@@ -20,6 +20,8 @@ In the post, we go over:
 4.  Install one Window Manager (lxde)
 
 The end result is a versioned configuration that can provision a basic arch VM with X and a window manager.
+
+**Note**: You can find the sources created during this post in my github [devbox-arch](https://github.com/benoitj/devbox-arch/tree/part2) repository.
 
 
 ## Pre-requisite {#pre-requisite}
@@ -164,8 +166,6 @@ The setup arch contains instructions to:
 2.  configure pacman to use a regional mirror
 3.  update the package list and update with any new package versions
 
-For details, look at the source [here](http://broken).
-
 
 ## Getting X environment working {#getting-x-environment-working}
 
@@ -190,8 +190,6 @@ Some objectives for the core provisioning script is:
 Now you should see a GUI login prompt with the vagrant user selected. You can enter the super secret password (ie: vagrant).
 
 **Warning**: The vagrant account is safe as long as you don't weaken the existing setup (like: enable services using password authentication).
-
-For details, look at the source [here](http://broken).
 
 
 ### Time to speed up {#time-to-speed-up}
