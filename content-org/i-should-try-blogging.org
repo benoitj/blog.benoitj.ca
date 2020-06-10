@@ -28,6 +28,7 @@ As a constant learner, constructive feedbacks are always welcomed. See my [[/abo
 
 /This is Day 1 of my #100DaysToOffload/
 
+#+hugo: more
+
 * Footnotes
 
-#+hugo: more

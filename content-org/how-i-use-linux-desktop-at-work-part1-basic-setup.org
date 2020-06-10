@@ -169,5 +169,6 @@ Coming next will be part 2, addressing basic X setup as well as tweaking the VM 
 
 /This is day 3 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
-* Footnotes
 #+hugo: more
+
+* Footnotes

@@ -2,7 +2,7 @@
 title = "How I Use Linux Desktop at Work - Part 1 - Basic setup"
 author = ["Benoit Joly"]
 date = 2020-05-29T11:31:24-04:00
-lastmod = 2020-06-05T00:20:04-04:00
+lastmod = 2020-06-10T11:10:49-04:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -184,3 +184,5 @@ This is way more efficient than installing from ISO and going through the instal
 Coming next will be part 2, addressing basic X setup as well as tweaking the VM configuration using the same VagrantFile.
 
 _This is day 3 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
+
+<!--more-->

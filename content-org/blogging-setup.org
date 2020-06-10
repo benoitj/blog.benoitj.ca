@@ -189,5 +189,5 @@ I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right tra
 
 /This is day 2 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
-* Footnotes
 #+hugo: more
+* Footnotes

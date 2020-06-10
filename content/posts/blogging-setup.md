@@ -2,7 +2,7 @@
 title = "Blogging Setup"
 author = ["Benoit Joly"]
 date = 2020-05-24T21:25:51-04:00
-lastmod = 2020-06-05T00:04:10-04:00
+lastmod = 2020-06-10T11:11:01-04:00
 tags = ["blogging", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -199,3 +199,5 @@ I'm thinking, if I reach 10 posts in the next 2 months, I'll be on the right tra
 -   maybe some electronics projects I have in my queue
 
 _This is day 2 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
+
+<!--more-->

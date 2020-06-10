@@ -2,7 +2,7 @@
 title = "How I use Linux desktop at work - Part2 - Window manager and GUI"
 author = ["Benoit Joly"]
 date = 2020-06-09T16:31:24-04:00
-lastmod = 2020-06-10T10:59:56-04:00
+lastmod = 2020-06-10T11:10:13-04:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -243,3 +243,5 @@ Some topics for the near future:
 I hope this series is of some use to others and inspire people to use tools that suits their needs.
 
 _This is day 4 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
+
+<!--more-->
