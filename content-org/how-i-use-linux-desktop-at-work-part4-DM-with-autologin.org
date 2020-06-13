@@ -1,0 +1,168 @@
+#+hugo_base_dir: ../
+#+hugo_section: posts
+
+#+hugo_auto_set_lastmod: f
+
+#+date: 2020-06-12T21:19:25-04:00
+#+hugo_categories: tech
+#+hugo_tags: Linux coding tools vm 100DaysToOffload
+
+#+hugo_draft: false
+
+#+title: Display Manager With Autologin - How I Use Linux Desktop at Work - Part4
+
+Part 4 of the series /How I use Linux desktop at work/ where I describe how I'm building a new Vagrant configuration to use for coding on Windows Host systems.
+
+This post describes the learning process to setup LightDM with autologin.
+
+As with previous posts, I will go over the research and manual implementation first, then go over how to automate it.
+
+In part 3, I described how I automated the build of the VirtualBox guest additions using vagrant. Part 4 will improve our current box by swapping the display manager to LightDM and setup autologin.
+
+Previous posts:
+1. [[https://blog.benoitj.ca/2020-05-29-how-i-use-linux-desktop-at-work-part1-basic-setup/][part1]] - Basic setup
+2. [[https://blog.benoitj.ca/2020-06-09-how-i-use-linux-desktop-at-work-part2-wm/][part2]] - X, and WM
+2. [[https://blog.benoitj.ca/2020-06-09-how-i-use-linux-desktop-at-work-part3-wm/][part3]] - VirtualBox guest additions
+
+In the post, I'll cover:
+
+ 1. Rationale
+ 2. Installing lightDM, a greeter
+ 3. Configure autologin
+ 4. Automating the whole thing
+ 5. Thoughts and next steps
+
+
+Steps 1-4 are describing the manual process while step 5 describe how I automated this in the Vagrantfile.
+
+*Note*: You can find the sources created during this post in my github [[https://github.com/benoitj/devbox-arch/tree/part4][devbox-arch]] repository.
+
+* Rationale
+I want to setup autologin since I want to get in the guest linux box ASAP without unecessary login.
+
+I only want to do this on a vagrant box under certain conditions:
+ 1. This vagrant box has a virtual NAT network enabled and no port forwarded except ssh using ssh keys setup by vagrant
+ 2. This box is secured by my host OS credentials. I cannot get in this box without unlocking my Host desktop.
+
+* Installing lightDM, a greeter, and XSession
+
+I really like the quality, somewhat simplicity and features that lightDM gives.
+
+The setup I usually put in place with lightDM:
+1. lightDM itself
+2. the gtk greeter. There are better greeter, but this one is simple, available everywhere
+3. a xsession that starts my ~/.xinitrc
+
+In arch, this means installing lightdm, lightdm-gtk-greeter, and xinit-xsession (AUR)
+
+For the first two, its simple:
+#+BEGIN_SRC bash
+pacman -S lightdm lightdm-gtk-greeter
+#+END_SRC
+
+xinit-xsession is part of AUR, so it's a bit more involved as you have to build it from source.
+
+#+BEGIN_SRC bash
+# some required tools
+pacman -S git fakeroot
+
+# now clone the AUR git repository
+git clone https://aur.archlinux.org/xinit-xsession.git
+cd xinit-xsession
+makepkg -sic --noconfirm
+#+END_SRC
+
+Now time to enable lightdm:
+#+BEGIN_SRC bash
+systemctl enable lightdm
+systemctl start lightdm
+#+END_SRC
+
+You'll now see the lightdm greeter with the /vagrant/ user pre-selected.
+
+If you want to login, the password is /vagrant/.
+
+Note that you can select xinitrc as a session in the session selection at the top right of the screen.
+
+* Configure autologin
+
+Autoconfig is configured in lightDM main configuration //etc/lightdm/lightdm.conf/.
+
+You must set the following two properties to get autologin with xinit session enabled:
+#+BEGIN_SRC configuration
+[seat:*]
+autologin-user=vagrant
+autologin-session=xinitrc
+#+END_SRC
+Note: you have to uncomment the two properties under the existing seat configuration.
+
+You can restart lightdm to see it in action:
+#+BEGIN_SRC bash
+systemctl restart lightdm
+#+END_SRC
+
+You also need to add the autologin group and add user vagrant to this group:
+
+#+BEGIN_SRC bash
+groupadd -r autologin
+usermod -a -G autologin vagrant
+#+END_SRC
+
+* Automating the whole thing
+
+All changes were made to the 2-core.sh script.
+
+The interesting part is how to install xinit-xsession and then setup lightdm for autologin.
+
+Installing xinit-xsession using AUR comes to one command:
+#+BEGIN_SRC bash
+cd /tmp
+    && sudo -u vagrant git clone https://aur.archlinux.org/xinit-xsession.git && \
+    cd xinit-xsession && \
+    sudo -u vagrant git checkout 7cae213844b && \
+    sudo -u vagrant makepkg -sic --noconfirm
+#+END_SRC
+
+Note: makepkg needs to run as a regular user, so you need to clone, and call makepkg using vagrant.
+
+Enabling autologin can be done using sed:
+#+BEGIN_SRC bash
+sed -i -e 's/# *autologin-user=.*/autologin-user=vagrant/' /etc/lightdm/lightdm.conf
+sed -i -e 's/# *autologin-session=.*/autologin-session=xinitrc/' /etc/lightdm/lightdm.conf
+#+END_SRC
+
+The sed's -i option enables in-place editing which change the file specified.
+
+The last part, creating a .xinitrc that calls openbox:
+#+BEGIN_SRC bash
+cat <<EOT > ~vagrant/.xinitrc
+#!/bin/bash
+exec /usr/bin/openbox
+EOT
+
+chown vagrant:vagrant ~vagrant/.xinitrc
+chmod +x ~vagrant/.xinitrc
+#+END_SRC
+
+Here, the file is created as root, and then ownership is transferred to the vagrant user.
+
+* Thoughts and next steps
+
+I hope I am able to demonstrate how easy it is to provision a Linux development VM using vagrant and some unix scripts.
+
+The hardest part is done, getting a foundation to install development tools and configuration.
+
+In next post, I'll configure this VM using chezmoi. This will allow me to bring my dotfiles and installation scripts.
+
+---
+
+When I started this blog, I was hoping it would be useful to others. Now I see that it may be as useful to me. It makes me thinks of my goals, think about improving, it makes me learn.
+
+I hope this series inspires people to shape tools to meet their needs.
+
+/This is day 6 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
+
+# needed to get a proper formatted summary in index page and rss
+#+hugo more
+
+* Footnotes
