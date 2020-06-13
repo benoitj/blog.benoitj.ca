@@ -22,7 +22,7 @@ In part 3, I described how I automated the build of the VirtualBox guest additio
 Previous posts:
 1. [[https://blog.benoitj.ca/2020-05-29-how-i-use-linux-desktop-at-work-part1-basic-setup/][part1]] - Basic setup
 2. [[https://blog.benoitj.ca/2020-06-09-how-i-use-linux-desktop-at-work-part2-wm/][part2]] - X, and WM
-2. [[https://blog.benoitj.ca/2020-06-09-how-i-use-linux-desktop-at-work-part3-wm/][part3]] - VirtualBox guest additions
+2. [[https://blog.benoitj.ca/2020-06-10-how-i-use-linux-desktop-at-work-part3-guest-additions/][part3]] - VirtualBox guest additions
 
 In the post, I'll cover:
 

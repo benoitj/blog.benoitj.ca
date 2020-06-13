@@ -2,7 +2,7 @@
 title = "Display Manager With Autologin - How I Use Linux Desktop at Work - Part4"
 author = ["Benoit Joly"]
 date = 2020-06-12T21:19:25-04:00
-lastmod = 2020-06-12T22:33:55-04:00
+lastmod = 2020-06-13T08:33:04-04:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -20,7 +20,7 @@ Previous posts:
 
 1.  [part1](https://blog.benoitj.ca/2020-05-29-how-i-use-linux-desktop-at-work-part1-basic-setup/) - Basic setup
 2.  [part2](https://blog.benoitj.ca/2020-06-09-how-i-use-linux-desktop-at-work-part2-wm/) - X, and WM
-3.  [part3](https://blog.benoitj.ca/2020-06-09-how-i-use-linux-desktop-at-work-part3-wm/) - VirtualBox guest additions
+3.  [part3](https://blog.benoitj.ca/2020-06-10-how-i-use-linux-desktop-at-work-part3-guest-additions/) - VirtualBox guest additions
 
 In the post, I'll cover:
 
