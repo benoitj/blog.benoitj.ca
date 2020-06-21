@@ -2,10 +2,10 @@
 title = "Dotfiles management using chezmoi - How I Use Linux Desktop at Work Part5"
 author = ["Benoit Joly"]
 date = 2020-06-15T10:30:17-04:00
-lastmod = 2020-06-21T13:55:12-04:00
+lastmod = 2020-06-21T13:58:24-04:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
-draft = true
+draft = false
 +++
 
 Part 5 of the series _How I use Linux desktop at work_ where I describe how I'm building a new Vagrant configuration to use for coding on Windows Host systems.
