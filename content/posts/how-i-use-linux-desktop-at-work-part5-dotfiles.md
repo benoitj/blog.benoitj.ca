@@ -2,7 +2,7 @@
 title = "Dotfiles management using chezmoi - How I Use Linux Desktop at Work Part5"
 author = ["Benoit Joly"]
 date = 2020-06-15T10:30:17-04:00
-lastmod = 2020-06-21T13:58:24-04:00
+lastmod = 2020-06-21T14:03:55-04:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -424,5 +424,7 @@ Some topics for next posts:
 2.  leveraging git history to find hot spot in your source code
 3.  test coverage, only half of the answer to quality measure of our automated tests
 4.  a series around replacing IntelliJ with Emacs LSP for Java development
+
+_This is day 7 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
 
 \#+hugo more

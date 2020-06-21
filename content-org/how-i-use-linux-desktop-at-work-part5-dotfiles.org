@@ -409,6 +409,8 @@ Some topics for next posts:
  3. test coverage, only half of the answer to quality measure of our automated tests
  4. a series around replacing IntelliJ with Emacs LSP for Java development
 
+/This is day 7 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
+
 # needed to get a proper formatted summary in index page and rss
 #+hugo more
 
