@@ -18,6 +18,6 @@
 
 
 # needed to get a proper formatted summary in index page and rss
-#+hugo more
+#+hugo: more
 
 * Footnotes
