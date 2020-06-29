@@ -2,7 +2,7 @@
 title = "Git Merge Conflicts - Git patching and resolving conflict (part 2)"
 author = ["Benoit Joly"]
 date = 2020-06-28T00:00:00-04:00
-lastmod = 2020-06-28T21:44:48-04:00
+lastmod = 2020-06-28T21:46:53-04:00
 tags = ["Linux", "coding", "tools", "git", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -10,7 +10,7 @@ draft = false
 
 {{< figure src="/ox-hugo/_20200628_190350screenshot.png" >}}
 
-I'm creating this post after seeing numerous people suffering and manually addressing merge conflicts while integrating patches with dwm, st, or dmenu code base.
+I'm creating this post after seeing many people suffering and manually addressing merge conflicts while integrating patches with dwm, st, or dmenu code base.
 
 The most common issues seen:
 

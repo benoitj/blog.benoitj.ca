@@ -16,7 +16,7 @@
 
 [[attachment:_20200628_190350screenshot.png]]
 
-I'm creating this post after seeing numerous people suffering and manually addressing merge conflicts while integrating patches with dwm, st, or dmenu code base.
+I'm creating this post after seeing many people suffering and manually addressing merge conflicts while integrating patches with dwm, st, or dmenu code base.
 
 The most common issues seen:
  1. applying patches on latest from master
