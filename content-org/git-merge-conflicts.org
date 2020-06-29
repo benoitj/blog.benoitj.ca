@@ -12,7 +12,7 @@
 
 #+hugo_draft: false
 
-#+title: Git Merge Conflicts
+#+title: Git Merge Conflicts - Git patching and resolving conflict (part 2)
 
 [[attachment:_20200628_190350screenshot.png]]
 

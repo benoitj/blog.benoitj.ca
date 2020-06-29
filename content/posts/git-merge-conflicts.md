@@ -1,8 +1,8 @@
 +++
-title = "Git Merge Conflicts"
+title = "Git Merge Conflicts - Git patching and resolving conflict (part 2)"
 author = ["Benoit Joly"]
 date = 2020-06-28T00:00:00-04:00
-lastmod = 2020-06-28T21:42:15-04:00
+lastmod = 2020-06-28T21:44:48-04:00
 tags = ["Linux", "coding", "tools", "git", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
