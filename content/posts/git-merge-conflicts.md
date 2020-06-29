@@ -2,10 +2,10 @@
 title = "Git Merge Conflicts"
 author = ["Benoit Joly"]
 date = 2020-06-28T00:00:00-04:00
-lastmod = 2020-06-28T21:40:01-04:00
+lastmod = 2020-06-28T21:42:15-04:00
 tags = ["Linux", "coding", "tools", "git", "100DaysToOffload"]
 categories = ["tech"]
-draft = true
+draft = false
 +++
 
 {{< figure src="/ox-hugo/_20200628_190350screenshot.png" >}}

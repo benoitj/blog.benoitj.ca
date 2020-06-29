@@ -10,7 +10,7 @@
 #+hugo_categories: tech
 #+hugo_tags: Linux coding tools git 100DaysToOffload
 
-#+hugo_draft: true
+#+hugo_draft: false
 
 #+title: Git Merge Conflicts
 
