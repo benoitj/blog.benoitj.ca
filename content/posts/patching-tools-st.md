@@ -1,8 +1,8 @@
 +++
 title = "Patching Tools - St"
 author = ["Benoit Joly"]
-date = 2020-07-09T20:38:27-04:00
-lastmod = 2020-07-12T12:28:59-04:00
+date = 2020-07-12
+lastmod = 2020-07-12T12:30:37-04:00
 tags = ["Linux", "tools", "git", "100DaysToOffload"]
 categories = ["tech"]
 draft = true

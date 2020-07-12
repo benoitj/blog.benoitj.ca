@@ -3,7 +3,7 @@
 
 #+hugo_auto_set_lastmod: f
 
-#+date: 2020-07-09T20:38:27-04:00
+#+date: 2020-07-12
 #+hugo_categories: tech
 #+hugo_tags: Linux tools git 100DaysToOffload
 
