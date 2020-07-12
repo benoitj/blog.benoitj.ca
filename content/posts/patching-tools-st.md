@@ -2,10 +2,10 @@
 title = "Patching Tools - St"
 author = ["Benoit Joly"]
 date = 2020-07-12
-lastmod = 2020-07-12T12:30:37-04:00
+lastmod = 2020-07-12T12:35:22-04:00
 tags = ["Linux", "tools", "git", "100DaysToOffload"]
 categories = ["tech"]
-draft = true
+draft = false
 +++
 
 As part of my renewed dotfiles setup and dev box setup, I'm taking the opportunity to update my core suckless.org tools: st, dwm, dmenu.
@@ -194,5 +194,9 @@ I hope I was able to show how simpler patching tools can be when using a branchi
 Yes you can do all this manually on the same branch, but it's takes more time and it is much more error prone. Tools are better than us to identify patterns and repeat tasks.
 
 Have fun patching! :)
+
+---
+
+_This is day 10 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
 
 <!--more-->
