@@ -1,0 +1,462 @@
+#+hugo_base_dir: ../
+#+hugo_section: posts
+
+#+hugo_auto_set_lastmod: f
+
+#+date: 2020-07-09T20:38:27-04:00
+#+hugo_categories: tech
+#+hugo_tags: Linux tools git 100DaysToOffload
+
+#+hugo_draft: true
+
+#+title: Patching Tools - St
+
+As part of my renewed dotfiles setup and dev box setup, I'm taking the opportunity to update my core suckless.org tools: st, dwm, dmenu.
+
+I've been using these for some time, and it's great for me to be able to customize tools I use.
+
+In this post, I'll re-create a new ST fork using up to date code base, and new patches that will work for me.
+
+*Note*: The focus will be on branching strategy and resolving merge conflicts. The aim is to show an effective way to leverage git and merge tools to integrate patches. You may want to read my [[https://blog.benoitj.ca/2020-06-28-git-merge-conflicts/][previous post]] describing how merge conflicts can be resolved using tools.
+
+* initial setup
+
+As you may know, git is a distributed version control system that can sync with multiple remotes.
+
+To get started, I usually:
+  1. create my own git repository
+  2. clone this repository locally (origin)
+  3. define an /upstream/ remote
+  4. merge the upstream/master branch into my local master branch
+  5. update my remote origin
+
+Lets do this:
+
+#+BEGIN_SRC bash :eval no
+git clone git@github.com:benoitj/st.git
+cd st
+git remote add upstream https://git.suckless.org/st
+git fetch upstream
+git merge upstream/master
+git push
+#+END_SRC
+
+The resulting remote setup is:
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+git remote -v
+#+END_SRC
+
+#+RESULTS[01243c7de96dd2c1fbe9cae7457df4a3dfdc9f83]:
+: origin	git@github.com:benoitj/st.git (fetch)
+: origin	git@github.com:benoitj/st.git (push)
+: upstream	https://git.suckless.org/st (fetch)
+: upstream	https://git.suckless.org/st (push)
+
+and my current branch setup:
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+git branch -a -vv
+#+END_SRC
+
+#+RESULTS[789046862bc13de11ef38c332749c98bfdd7316c]:
+: * master                  fa253f0 [origin/master] bump version to 0.8.4
+:   remotes/origin/master   fa253f0 bump version to 0.8.4
+:   remotes/upstream/master fa253f0 bump version to 0.8.4
+:   remotes/upstream/split  20f7135 Change default keybindings
+:   remotes/upstream/wchar  e8f1308 Receive only a wchar_t in tchar()
+
+You can see that my local master branch tracks my github's origin/master branch.
+
+* Patching strategy
+
+For each patch, I will:
+
+1. create a branch from the commit the patch was created from.
+2. apply the patch. We should not get conflicts here.
+3. merge the patch to master branch (may need conflict resolution. Read my [[https://blog.benoitj.ca/2020-06-28-git-merge-conflicts/][previous post]])
+
+
+How do we know how to create the branch?
+
+In the case of most patches, the filename indicate some context. In the following example, we will apply the patch /st-xresources-20200604-9ba7ecf.diff/. From  the file name, we understand the patch was created June 4th from the commit hash 9ba7ecf.
+
+Now the trick is to create our branch from that commit. Reading the git documentation, you can learn this is done with the syntax: git branch <branch name> [commit hash]
+
+* Patching ST
+
+Lets do this and apply the patch:
+
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+mkdir patches
+wget -P patches https://st.suckless.org/patches/xresources/st-xresources-20200604-9ba7ecf.diff
+git branch patches/xresources 9ba7ecf
+git checkout patches/xresources
+git apply < patches/st-xresources-20200604-9ba7ecf.diff
+#+END_SRC
+
+#+RESULTS[e9d4e2b68dd13dd0bcd47e19cfc77990c4b04662]:
+
+And we can see what has changed:
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+git diff
+#+END_SRC
+
+#+RESULTS[b28527134cb1fc09719d6e35c026b95ba38f2a39]:
+#+begin_example
+diff --git a/config.def.h b/config.def.h
+index 6f05dce..9b99782 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -168,6 +168,42 @@ static unsigned int defaultattr = 11;
+  ,*/
+ static uint forcemousemod = ShiftMask;
+
++/*
++ * Xresources preferences to load at startup
++ */
++ResourcePref resources[] = {
++		{ "font",         STRING,  &font },
++		{ "color0",       STRING,  &colorname[0] },
++		{ "color1",       STRING,  &colorname[1] },
++		{ "color2",       STRING,  &colorname[2] },
++		{ "color3",       STRING,  &colorname[3] },
++		{ "color4",       STRING,  &colorname[4] },
++		{ "color5",       STRING,  &colorname[5] },
++		{ "color6",       STRING,  &colorname[6] },
++		{ "color7",       STRING,  &colorname[7] },
++		{ "color8",       STRING,  &colorname[8] },
++		{ "color9",       STRING,  &colorname[9] },
++		{ "color10",      STRING,  &colorname[10] },
++		{ "color11",      STRING,  &colorname[11] },
++		{ "color12",      STRING,  &colorname[12] },
++		{ "color13",      STRING,  &colorname[13] },
++		{ "color14",      STRING,  &colorname[14] },
++		{ "color15",      STRING,  &colorname[15] },
++		{ "background",   STRING,  &colorname[256] },
++		{ "foreground",   STRING,  &colorname[257] },
++		{ "cursorColor",  STRING,  &colorname[258] },
++		{ "termname",     STRING,  &termname },
++		{ "shell",        STRING,  &shell },
++		{ "minlatency",   INTEGER, &minlatency },
++		{ "maxlatency",   INTEGER, &maxlatency },
++		{ "blinktimeout", INTEGER, &blinktimeout },
++		{ "bellvolume",   INTEGER, &bellvolume },
++		{ "tabspaces",    INTEGER, &tabspaces },
++		{ "borderpx",     INTEGER, &borderpx },
++		{ "cwscale",      FLOAT,   &cwscale },
++		{ "chscale",      FLOAT,   &chscale },
++};
++
+ /*
+  ,* Internal mouse shortcuts.
+  ,* Beware that overloading Button1 will disable the selection.
+diff --git a/x.c b/x.c
+index 210f184..76f167f 100644
+--- a/x.c
++++ b/x.c
+@@ -14,6 +14,7 @@
+ #include <X11/keysym.h>
+ #include <X11/Xft/Xft.h>
+ #include <X11/XKBlib.h>
++#include <X11/Xresource.h>
+
+ char *argv0;
+ #include "arg.h"
+@@ -45,6 +46,19 @@ typedef struct {
+ 	signed char appcursor; /* application cursor */
+ } Key;
+
++/* Xresources preferences */
++enum resource_type {
++	STRING = 0,
++	INTEGER = 1,
++	FLOAT = 2
++};
++
++typedef struct {
++	char *name;
++	enum resource_type type;
++	void *dst;
++} ResourcePref;
++
+ /* X modifiers */
+ #define XK_ANY_MOD    UINT_MAX
+ #define XK_NO_MOD     0
+@@ -828,8 +842,8 @@ xclear(int x1, int y1, int x2, int y2)
+ void
+ xhints(void)
+ {
+-	XClassHint class = {opt_name ? opt_name : termname,
+-	                    opt_class ? opt_class : termname};
++	XClassHint class = {opt_name ? opt_name : "st",
++	                    opt_class ? opt_class : "St"};
+ 	XWMHints wm = {.flags = InputHint, .input = 1};
+ 	XSizeHints *sizeh;
+
+@@ -1104,8 +1118,6 @@ xinit(int cols, int rows)
+ 	pid_t thispid = getpid();
+ 	XColor xmousefg, xmousebg;
+
+-	if (!(xw.dpy = XOpenDisplay(NULL)))
+-		die("can't open display\n");
+ 	xw.scr = XDefaultScreen(xw.dpy);
+ 	xw.vis = XDefaultVisual(xw.dpy, xw.scr);
+
+@@ -1964,6 +1976,59 @@ run(void)
+ 	}
+ }
+
++int
++resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst)
++{
++	char **sdst = dst;
++	int *idst = dst;
++	float *fdst = dst;
++
++	char fullname[256];
++	char fullclass[256];
++	char *type;
++	XrmValue ret;
++
++	snprintf(fullname, sizeof(fullname), "%s.%s",
++			opt_name ? opt_name : "st", name);
++	snprintf(fullclass, sizeof(fullclass), "%s.%s",
++			opt_class ? opt_class : "St", name);
++	fullname[sizeof(fullname) - 1] = fullclass[sizeof(fullclass) - 1] = '\0';
++
++	XrmGetResource(db, fullname, fullclass, &type, &ret);
++	if (ret.addr == NULL || strncmp("String", type, 64))
++		return 1;
++
++	switch (rtype) {
++	case STRING:
++		*sdst = ret.addr;
++		break;
++	case INTEGER:
++		*idst = strtoul(ret.addr, NULL, 10);
++		break;
++	case FLOAT:
++		*fdst = strtof(ret.addr, NULL);
++		break;
++	}
++	return 0;
++}
++
++void
++config_init(void)
++{
++	char *resm;
++	XrmDatabase db;
++	ResourcePref *p;
++
++	XrmInitialize();
++	resm = XResourceManagerString(xw.dpy);
++	if (!resm)
++		return;
++
++	db = XrmGetStringDatabase(resm);
++	for (p = resources; p < resources + LEN(resources); p++)
++		resource_load(db, p->name, p->type, p->dst);
++}
++
+ void
+ usage(void)
+ {
+@@ -2037,6 +2102,11 @@ run:
+
+ 	setlocale(LC_CTYPE, "");
+ 	XSetLocaleModifiers("");
++
++	if(!(xw.dpy = XOpenDisplay(NULL)))
++		die("Can't open display\n");
++
++	config_init();
+ 	cols = MAX(cols, 1);
+ 	rows = MAX(rows, 1);
+ 	tnew(cols, rows);
+#+end_example
+
+and lets confirm it worked:
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output :eval no
+make clean all
+./st
+#+END_SRC
+
+#+RESULTS[4965e30c71f46117c45356b087385be5122a62ad]:
+: rm -f st st.o x.o st-0.8.3.tar.gz
+: st build options:
+: CFLAGS  = -I/usr/X11R6/include  -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include   -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -DVERSION="0.8.3" -D_XOPEN_SOURCE=600  -O1
+: LDFLAGS = -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  -lfontconfig -lfreetype   -lfreetype
+: CC      = c99
+: cp config.def.h config.h
+: c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.3\" -D_XOPEN_SOURCE=600  -O1 -c st.c
+: c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.3\" -D_XOPEN_SOURCE=600  -O1 -c x.c
+: c99 -o st st.o x.o -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  `pkg-config --libs fontconfig`  `pkg-config --libs freetype2`
+
+Everything's good, now is a good time to commit our changes:
+
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+git add x.c config.def.h patches
+git commit -m "applying patch st-xresources-20200604-9ba7ecf.diff"
+#+END_SRC
+
+#+RESULTS[48ac6379fc833667b611cc1da81146724c052b4e]:
+: [patches/xresources e09c9dd] applying patch st-xresources-20200604-9ba7ecf.diff
+:  4 files changed, 478 insertions(+), 4 deletions(-)
+:  create mode 100644 patches/st-xresources-20200604-9ba7ecf.diff
+:  create mode 100644 patches/st-xresources-20200604-9ba7ecf.diff.1
+
+And push:
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+git push --set-upstream origin patches/xresources
+#+END_SRC
+
+#+RESULTS[86a20097c517e4627970e5dae77c64137fca9c31]:
+: Branch 'patches/xresources' set up to track remote branch 'patches/xresources' from 'origin'.
+
+and merge the branch to master:
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+git checkout master
+git merge patches/xresources
+#+END_SRC
+
+I will do the same for the following patches: externalpipe and scrollback:
+
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+wget -P patches https://st.suckless.org/patches/scrollback/st-scrollback-20200419-72e3f6c.diff
+git branch patches/scrollback 72e3f6c
+git checkout patches/scrollback
+git apply < patches/st-scrollback-20200419-72e3f6c.diff
+make clean all
+#+END_SRC
+
+#+RESULTS[551b56cc8aeb623a38edccaa81fcd1f08c1e0181]:
+: Your branch is up to date with 'origin/master'.
+: Merge made by the 'recursive' strategy.
+:  config.def.h                                  |  36 +++++
+:  patches/st-xresources-20200604-9ba7ecf.diff   | 184 ++++++++++++++++++++++++++
+:  patches/st-xresources-20200604-9ba7ecf.diff.1 | 184 ++++++++++++++++++++++++++
+:  x.c                                           |  78 ++++++++++-
+:  4 files changed, 478 insertions(+), 4 deletions(-)
+:  create mode 100644 patches/st-xresources-20200604-9ba7ecf.diff
+:  create mode 100644 patches/st-xresources-20200604-9ba7ecf.diff.1
+:
+: rm -f st st.o x.o st-0.8.2.tar.gz
+: st build options:
+: CFLAGS  = -I/usr/X11R6/include  -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include   -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -DVERSION="0.8.2" -D_XOPEN_SOURCE=600  -O1
+: LDFLAGS = -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  -lfontconfig -lfreetype   -lfreetype
+: CC      = c99
+: c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.2\" -D_XOPEN_SOURCE=600  -O1 -c st.c
+: c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.2\" -D_XOPEN_SOURCE=600  -O1 -c x.c
+: c99 -o st st.o x.o -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  `pkg-config --libs fontconfig`  `pkg-config --libs freetype2`
+
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+git add st.c st.h config.def.h patches
+git commit -m "applying patch st-scrollback-20200419-72e3f6c.diff"
+git push --set-upstream origin patches/scrollback
+#+END_SRC
+
+#+RESULTS[ec6b1806a5d10aebbe00e577b2ac5118ccbeff2f]:
+: [patches/scrollback 98b7c07] applying patch st-scrollback-20200419-72e3f6c.diff
+:  4 files changed, 453 insertions(+), 27 deletions(-)
+:  create mode 100644 patches/st-scrollback-20200419-72e3f6c.diff
+: Branch 'patches/scrollback' set up to track remote branch 'patches/scrollback' from 'origin'.
+
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+git checkout master
+git merge patches/scrollback
+#+END_SRC
+
+#+RESULTS[fe72a9250e64310846c7fcbaf91bd0eee3881ea6]:
+#+begin_example
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Auto-merging st.h
+Auto-merging st.c
+A"uto-merging config.def.h
+Merge made by the 'recursive' strategy.
+ config.def.h                                |   2 +
+ patches/st-scrollback-20200419-72e3f6c.diff | 351 ++++++++++++++++++++++++++++
+ st.c                                        | 125 +++++++---
+ st.h                                        |   2 +
+ 4 files changed, 453 insertions(+), 27 deletions(-)
+ create mode 100644 patches/st-scrollback-20200419-72e3f6c.diff
+#+end_example
+
+If I build master, I have both scrollback and xresources patches included:
+
+#+BEGIN_SRC bash :cache yes :dir ~/src/st :results output
+rm config.h
+make clean all
+#+END_SRC
+
+#+RESULTS[04031936849fd2f1de4b376e9141b26dc120fedb]:
+: rm -f st st.o x.o st-0.8.4.tar.gz
+: st build options:
+: CFLAGS  = -I/usr/X11R6/include  -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include   -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -DVERSION="0.8.4" -D_XOPEN_SOURCE=600  -O1
+: LDFLAGS = -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  -lfontconfig -lfreetype   -lfreetype
+: CC      = c99
+: cp config.def.h config.h
+: c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.4\" -D_XOPEN_SOURCE=600  -O1 -c st.c
+: c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.4\" -D_XOPEN_SOURCE=600  -O1 -c x.c
+: c99 -o st st.o x.o -L/usr/X11R6/lib -lm -lrt -lX11 -lutil -lXft  `pkg-config --libs fontconfig`  `pkg-config --libs freetype2`
+
+* Merge conflicts :ATTACH:
+:PROPERTIES:
+:ID:       40ebd1d0-e472-4513-afb5-6bcfa3c54a6b
+:END:
+
+You may get couple of merge conflicts around keybindings, configuration, and similar.
+
+They are usually really simple to solve using a merge tool as described in this [[https://blog.benoitj.ca/2020-06-28-git-merge-conflicts/][previous post]].
+
+I had no conflict patching st, but had some when patching dmenu. Here are some examples:
+
+** Example of applying borderoption patch on top of border patch
+
+#+BEGIN_SRC bash :eval no
+git checkout master
+git merge patches/border
+git merge patches/borderoption
+git mergetool
+git commit
+#+END_SRC
+Example of such conflict when merging border and borderoption on dmenu master branch:
+
+#+ATTR_HTML: :width 150%
+#+ATTR_ORG: :width 1024
+[[attachment:_20200712_120511screenshot.png]]
+
+In this case, I will select the /remote/ (the borderoption branch) since it makes the attribute mutable.
+
+** Example of applying the dmenu fuzzymatch patch on top of center patch
+
+#+BEGIN_SRC bash :eval no
+git checkout master
+git merge patches/center
+git merge patches/fuzzymatch
+git mergetool
+git commit
+#+END_SRC
+
+#+ATTR_HTML: :width 150%
+[[attachment:_20200712_120910screenshot.png]]
+
+In this case, we need to take both the /local/ (center patch) and the /remote/ (fuzzymatch patch), so I select C and B to get this result:
+
+
+#+ATTR_HTML: :width 150%
+#+ATTR_ORG: :width 1024
+[[attachment:_20200712_121232screenshot.png]]
+
+
+* Thoughts and what's next
+I hope I was able to show how simpler patching tools can be when using a branching strategy, branching from the right version, and using tools to resolve conflicts.
+
+Yes you can do all this manually on the same branch, but it's takes more time and it is much more error prone. Tools are better than us to identify patterns and repeat tasks.
+
+Have fun patching! :)
+
+# needed to get a proper formatted summary in index page and rss
+#+hugo: more
+
+* Footnotes
