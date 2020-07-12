@@ -81,6 +81,8 @@ In the case of most patches, the filename indicate some context. In the followin
 
 Now the trick is to create our branch from that commit. Reading the git documentation, you can learn this is done with the syntax: git branch <branch name> [commit hash]
 
+Sometimes the commit hash does not match the history, in this case, use git log and find a commit hash close to the patch creation date.
+
 * Patching ST
 
 Lets do this and apply the patch:

@@ -2,7 +2,7 @@
 title = "Patching Tools - St"
 author = ["Benoit Joly"]
 date = 2020-07-12
-lastmod = 2020-07-12T12:35:22-04:00
+lastmod = 2020-07-12T12:44:01-04:00
 tags = ["Linux", "tools", "git", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -68,6 +68,8 @@ How do we know how to create the branch?
 In the case of most patches, the filename indicate some context. In the following example, we will apply the patch _st-xresources-20200604-9ba7ecf.diff_. From  the file name, we understand the patch was created June 4th from the commit hash 9ba7ecf.
 
 Now the trick is to create our branch from that commit. Reading the git documentation, you can learn this is done with the syntax: git branch <branch name> [commit hash]
+
+Sometimes the commit hash does not match the history, in this case, use git log and find a commit hash close to the patch creation date.
 
 
 ## Patching ST {#patching-st}
