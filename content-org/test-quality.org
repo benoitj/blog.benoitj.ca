@@ -1,0 +1,21 @@
+#+hugo_base_dir: ../
+#+hugo_section: posts
+
+#+hugo_auto_set_lastmod: f
+
+#+date: 2020-07-23
+#+hugo_categories: tech
+#+hugo_tags: coding testing tools 100DaysToOffload
+
+#+hugo_draft: true
+
+#+TITLE: Test Quality
+
+
+---
+
+/This is day 11 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
+
+* Footnotes
+
+#+hugo: more

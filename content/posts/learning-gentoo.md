@@ -1,0 +1,99 @@
++++
+title = "Learning Gentoo"
+author = ["Benoit Joly"]
+date = 2020-07-23
+lastmod = 2020-07-23T23:12:34-04:00
+tags = ["coding", "testing", "tools", "100DaysToOffload"]
+categories = ["tech"]
+draft = true
++++
+
+{{< figure src="/ox-hugo/_20200723_225722Gblend.png" width="30%" >}}
+
+Been quite busy in the last couple of weeks. What kept me busy? Family being on vacation, my backyard landscaping project, and wiping Arch from my laptop with Gentoo....
+
+I had no clue what was really Gentoo before wiping my laptop clean. Like with any major learning, the easiest way to learn is to just dive in and practice until you understand enough.
+
+This is a learning experiment, so I'm not sure if I will keep using Gentoo after this.
+
+I can tell that so far, I've achieved want I wanted: Being productive on my laptop again. Since I'm using this laptop to write this blog, you can imagine that this put a pause to my posts :-).
+
+This post will be about what I learned, and also about the learning journey. There are plenty of quality guides, references, videos on Gentoo, I'm not going to repeat too much there.
+
+
+## My OS experience {#my-os-experience}
+
+On the OS front, I started with dos, win 3, win95, then switched to Slackware, Debian, Ubuntu and Arch. I still actively use Debian (server), Ubuntu at work, and Arch on my home desktop/laptop.
+
+I sysadmin my lab, also code and deploy to Linux and Unix since I started using Linux.
+
+In the recent years, I've been transitioning my desktop to Arch to get more recent software, and I run Debian on my servers.
+
+
+## Why Gentoo? {#why-gentoo}
+
+Lets start with my background: I started coding when I was 8yo and I'm now 44. I've worked on so many things, languages, OSes. I experimented, broke many things, fixed and learned so many things and I still keep learning. I do think that anyone successful in this field should have curiosity, courage to try new things, and constant habit to self improve things. If you stopped learning, you probably don't do enough.
+
+Gentoo has a lot to give for someone who likes to understand and thinker with things. So I think it may be the perfect match for me.
+
+In a nutshell, I want to learn something different that I can shape to my liking.
+
+
+## Gentoo, the beginning {#gentoo-the-beginning}
+
+About 1 month ago, I tried to learn Gentoo without much success. In this case, I just installed it in a VM. What was wrong? commitment! I was doing nothing useful on the VM, so I lost track and beside the installation, I did not learn much.
+
+How to fix commitment?
+
+Lets wipe my current working setup, and get started with Gentoo!!!
+
+
+## Booting, 3 takes {#booting-3-takes}
+
+I believe booting was the most difficult part of the whole installation. Some reasons of failures:
+
+1.  Was following the non-uefi boot setup while my MB was setup for UEFI
+2.  This is a laptop, so needed LVM with dm-crypt. This required some boot options.
+    Could not find info about this in the handbook, but I then found this really good guide on setting up LVM, dm-crypt on Gentoo: <https://wiki.gentoo.org/wiki/Full%5FDisk%5FEncryption%5FFrom%5FScratch%5FSimplified>. Things worked after that.
+
+The good thing about it, I practiced base install 3 times :P
+
+
+## Some random learning {#some-random-learning}
+
+Here are some random learning on Gentoo
+
+1.  The Gentoo handbook is quite great. The wiki too, just a tiny bit behind the ArchWiki.
+2.  Large software or ones with many dependencies increase compile time. This forced me to re-question the software I use
+3.  You may not want to compile Firefox yourself
+4.  Start with no to minimal number of USE flags. Set use flags to specific packages unless it does cover a large set of packages. For example, X, NetworkManager, PulseAudio could be set system wide, but JPEG could be set to ffmpeg only.
+5.  after getting used to portage configuration files, flaggie is a quite nice tool to simplify this process
+6.  List of use flags with description that a package support can be listed using _equery u ​<package name​>_
+7.  some packages have an insane amount of dependencies. Try to find alternatives before
+8.  doas is simple and nice, but sudo handles better password request
+9.  openrc is working well, except for networking. Could not get network to be properly switching between LAN and WiFi. I ended up using NetworkManager with nmcli/nmtui
+10. Don't forget to _emerge --change-use @world_ after changes to global USE flags.
+11. Browsers are not that fun to compile. One night for Qutebrowser and it's dependencies on a 4 thread basic CPU.
+12. Always use the --ask when emerging packages.
+13. Config files temp files are called .\_cfgsomething, I usually do a diff between this new file and the original file to spot changes, and just overwrite the original file with the new one.
+14. Most of the tools / software I use are fast to compile except:
+    1.  the kernel. I need to configure my own instead of using genkernel.
+    2.  ripgrep, took ages due to compiling rust.
+    3.  kdiff3, I actually C-c the process since it depends on the world. I plan on using ediff instead.
+    4.  mpv is complex to compile, it depends on ffmpeg that has pages long of use flags and other dependencies
+15. It's easy to just set the use flags I understand and update them later if needed. Much better than trying to get everything perfect the first time.
+16. Gentoo is not that difficult when you dive in and have prior Linux experience. I started the process last Friday, and I took 5 days to get back a functional setup.
+17. Unclear if this is just real or not, but my laptop feels faster
+
+
+## Thoughts {#thoughts}
+
+Was it worth it? Hell yeah! Learned a lot. It feels like older Unix OSs, but with modern tools.
+
+Will I use this at work? Most probably not, hard to justify the compile time, but at home, it does not really matter.
+
+Now I'm back with a working blogging setup.
+
+---
+
+_This is day 11 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
