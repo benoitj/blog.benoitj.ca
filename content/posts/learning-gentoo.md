@@ -2,13 +2,13 @@
 title = "Learning Gentoo"
 author = ["Benoit Joly"]
 date = 2020-07-25
-lastmod = 2020-07-25T22:02:42-04:00
+lastmod = 2020-07-25T23:11:05-04:00
 tags = ["coding", "testing", "tools", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
 +++
 
-<_20200723_225722Gblend.png>
+{{< figure src="/ox-hugo/_20200725_230602gentoo-logo.png" width="30%" >}}
 
 Been quite busy in the last couple of weeks. What kept me busy? Family being on vacation, my backyard landscaping project, and wiping Arch from my laptop with Gentoo....
 

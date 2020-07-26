@@ -1,5 +1,6 @@
 :PROPERTIES:
 :ID:       7b3e3c60-ea5a-4d07-8a7b-f6e365130aa4
+:DIR:      /home/benoit/src/blog.benoitj.ca/content-org/learning-gentoo/
 :END:
 
 
@@ -18,7 +19,7 @@
 
 #+ATTR_HTML: :width 30%
 #+ATTR_ORG: :width 340
-[[attachment:_20200723_225722Gblend.png]]
+[[./learning-gentoo/_20200725_230602gentoo-logo.png]]
 
 Been quite busy in the last couple of weeks. What kept me busy? Family being on vacation, my backyard landscaping project, and wiping Arch from my laptop with Gentoo....
 
