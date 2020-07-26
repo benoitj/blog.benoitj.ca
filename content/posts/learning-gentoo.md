@@ -1,14 +1,14 @@
 +++
 title = "Learning Gentoo"
 author = ["Benoit Joly"]
-date = 2020-07-23
-lastmod = 2020-07-23T23:12:34-04:00
+date = 2020-07-25
+lastmod = 2020-07-25T22:02:42-04:00
 tags = ["coding", "testing", "tools", "100DaysToOffload"]
 categories = ["tech"]
-draft = true
+draft = false
 +++
 
-{{< figure src="/ox-hugo/_20200723_225722Gblend.png" width="30%" >}}
+<_20200723_225722Gblend.png>
 
 Been quite busy in the last couple of weeks. What kept me busy? Family being on vacation, my backyard landscaping project, and wiping Arch from my laptop with Gentoo....
 
@@ -88,11 +88,13 @@ Here are some random learning on Gentoo
 
 ## Thoughts {#thoughts}
 
-Was it worth it? Hell yeah! Learned a lot. It feels like older Unix OSs, but with modern tools.
+Was it worth it? Hell yeah!
 
-Will I use this at work? Most probably not, hard to justify the compile time, but at home, it does not really matter.
+**Will I keep using this on my personal laptop?** Most probably, unless it comes to a point of always breaking (which is totally not the case). Also, I cannot justify spending another couple of days yet to go back to Arch when I can do everything on Gentoo.
 
-Now I'm back with a working blogging setup.
+**Will I use this at work?** Most probably not, hard to justify the compile time, but at home, it does not really matter. Ubuntu or Arch are better options.
+
+Now I'm back with a working blogging setup, you can expect more posts in the next few days.
 
 ---
 
