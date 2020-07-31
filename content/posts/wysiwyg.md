@@ -2,10 +2,10 @@
 title = "Ditch WYSIWYG apps and switch to plaintext tools"
 author = ["Benoit Joly"]
 date = 2020-07-31
-lastmod = 2020-07-30T23:28:00-04:00
+lastmod = 2020-07-31T13:22:30-04:00
 tags = ["coding", "plaintext", "opinion", "100DaysToOffload"]
 categories = ["tech"]
-draft = true
+draft = false
 +++
 
 On this post, I'll go over WYSIWYG apps, and effective alternatives.
@@ -148,7 +148,7 @@ Some references for diagram tools:
 
 I just could barely touch the subject but this is already too long. I hope I could give you some ideas and alternatives to tools most people use.
 
-While doing this post, I discovered some cool tools I did not know. This may be useful for some of my work related documents.
+While doing this post, I discovered some cool tools I did not know. This may be useful for some of my work related documents. You may see more post around this in the future.
 
 ---
 

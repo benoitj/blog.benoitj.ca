@@ -7,7 +7,7 @@
 #+hugo_categories: tech
 #+hugo_tags: coding plaintext opinion 100DaysToOffload
 
-#+hugo_draft: true
+#+hugo_draft: false
 
 #+TITLE:  Ditch WYSIWYG apps and switch to plaintext tools
 
@@ -133,7 +133,7 @@ Some references for diagram tools:
 
 I just could barely touch the subject but this is already too long. I hope I could give you some ideas and alternatives to tools most people use.
 
-While doing this post, I discovered some cool tools I did not know. This may be useful for some of my work related documents.
+While doing this post, I discovered some cool tools I did not know. This may be useful for some of my work related documents. You may see more post around this in the future.
 
 ---
 
