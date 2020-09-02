@@ -2,10 +2,10 @@
 title = "Working From Home"
 author = ["Benoit Joly"]
 date = 2020-09-02T00:17:14-04:00
-lastmod = 2020-09-02T13:33:56-04:00
+lastmod = 2020-09-02T13:36:48-04:00
 tags = ["100DaysToOffload"]
 categories = ["opinion"]
-draft = true
+draft = false
 +++
 
 ## A curse and/or a blessing? {#a-curse-and-or-a-blessing}
