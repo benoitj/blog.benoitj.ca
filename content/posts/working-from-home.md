@@ -2,7 +2,7 @@
 title = "Working From Home"
 author = ["Benoit Joly"]
 date = 2020-09-02T00:17:14-04:00
-lastmod = 2020-09-02T13:36:48-04:00
+lastmod = 2020-09-03T00:04:28-04:00
 tags = ["100DaysToOffload"]
 categories = ["opinion"]
 draft = false
@@ -56,7 +56,7 @@ Here are some benefits from working from home:
 
 Your experience could be totally different, this is really a personal thing.
 
-Once Covid restrictions are lifted, I would gladly meet my teammates at the office once in a while, but regular attendance to the office is not longer part of my life.
+Once Covid restrictions are lifted, I would gladly meet my teammates at the office once in a while, but regular attendance to the office is no longer part of my life.
 
 Working from home is a perfect fit for me :D
 
