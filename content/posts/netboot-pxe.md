@@ -1,8 +1,8 @@
 +++
 title = "Netboot Pxe"
 author = ["Benoit Joly"]
-date = 2020-09-01T22:46:47-04:00
-lastmod = 2020-09-02T00:15:17-04:00
+date = 2020-09-03T22:46:47-04:00
+lastmod = 2020-09-03T21:11:09-04:00
 tags = ["100DaysToOffload"]
 categories = ["tech"]
 draft = true
@@ -19,9 +19,9 @@ This is when I found PXE and NetBoot.xyz image.
 
 ## What is PXE? {#what-is-pxe}
 
-PXE stands for Preboot eXecution Environment. It's a way to distributo boot images over network.
+PXE stands for Preboot eXecution Environment. It's a way to distribute boot images over network.
 
-It uses a combination of TFTP (Tiny File Transfer Protocol) for transfering images and DHCP for discovery.
+It uses a combination of TFTP (Tiny File Transfer Protocol) for transferring images and DHCP for discovery.
 
 It enables to boot most machines over network.
 
@@ -43,7 +43,7 @@ Select an image, it will download and boot it.
 
 ## TFTP server {#tftp-server}
 
-Self hosting TFTP is relatively easy if you have a WRT router, PfSense/OpenSense, FreeNAS. It's not much more difficult to install on any linux server.
+Self hosting TFTP is relatively easy if you have a WRT router, PfSense/OpenSense, FreeNAS. It's not much more difficult to install on any Linux server.
 
 In my case, I have the choice between:
 
@@ -59,7 +59,7 @@ The setup is straight forward:
 3.  configure TFTP to use the folder created as it's main directory
 4.  store the netboot.xyz images: netboot.xyz.kpxe for regular boot, and netboot.xyz.efi for EFI booting.
 
-If you want to verify your setup, just download a TFTP client (for example, atftp), connect to the tftp server and _get netboot.xyz.kpxe_. This should download the images served by your TFTP server.
+If you want to verify your setup, just download a TFTP client (for example, atftp), connect to the TFTP server and _get netboot.xyz.kpxe_. This should download the images served by your TFTP server.
 
 
 ## DHCP {#dhcp}
@@ -74,23 +74,23 @@ On my OpnSense Firewall, I need to:
 
 1.  enable network booting
 2.  set the TFTP server to my FreeNAS server IP
-3.  define the default image with netboot.xyz.kpxe and the efi 32/64 with netboot.xyz.efi
+3.  define the default image with netboot.xyz.kpxe and the EFI 32/64 with netboot.xyz.efi
 
 
 ## Booting up {#booting-up}
 
-Now, to boot using PXE on any pc or even in VirtualBox, you need to select network in the boot menu. After getting an IP address, you should boot the netboot.xyz image.
+Now, to boot using PXE on any PC or even in VirtualBox, you need to select network in the boot menu. After getting an IP address, you should boot the netboot.xyz image.
 
 
 ## Thoughts {#thoughts}
 
 I've missed writing on my blog... Life, vacation, making major backyard refactor put me away from the keyboard for some time.
 
-Special congrats to folks who made it to the 100th post. This is quite an achievement.
+Special congrats to folks who made it to the 100 posts. This is quite an achievement.
 
 I don't think I'll get this anytime soon, but I plan to continue posting regularly.
 
 ---
-This is day 13 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>.
+This is day 14 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>.
 
 <!--more-->
