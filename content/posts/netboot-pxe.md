@@ -2,10 +2,10 @@
 title = "Netboot Pxe"
 author = ["Benoit Joly"]
 date = 2020-09-03T22:46:47-04:00
-lastmod = 2020-09-03T21:11:09-04:00
+lastmod = 2020-09-03T21:13:52-04:00
 tags = ["100DaysToOffload"]
 categories = ["tech"]
-draft = true
+draft = false
 +++
 
 ## Where are my USB drives? {#where-are-my-usb-drives}
