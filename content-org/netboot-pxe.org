@@ -3,7 +3,7 @@
 
 #+hugo_auto_set_lastmod: f
 
-#+date: 2020-09-03T22:46:47-04:00
+#+date: 2020-09-03T20:46:47-04:00
 #+hugo_categories: tech
 #+hugo_tags: 100DaysToOffload
 

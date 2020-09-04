@@ -1,8 +1,8 @@
 +++
 title = "Netboot Pxe"
 author = ["Benoit Joly"]
-date = 2020-09-03T22:46:47-04:00
-lastmod = 2020-09-03T21:13:52-04:00
+date = 2020-09-03T20:46:47-04:00
+lastmod = 2020-09-03T21:18:12-04:00
 tags = ["100DaysToOffload"]
 categories = ["tech"]
 draft = false
