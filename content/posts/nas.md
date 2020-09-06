@@ -2,7 +2,7 @@
 title = "Home data storage"
 author = ["Benoit Joly"]
 date = 2020-09-05T20:26:48-04:00
-lastmod = 2020-09-05T23:21:15-04:00
+lastmod = 2020-09-06T10:25:00-04:00
 tags = ["selfhosting", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -173,5 +173,9 @@ Once your NAS is setup, you can add other distribution services, like NextCloud,
 Your NAS does not have to be that powerful, if all you have is documents and some pictures, a raspberry pi or similar is enough. If your NAS has multiple users and server lots of (large) files, it may require a bigger setup like the one describes in this post.
 
 Setting up your own NAS is possibly the first step to own your data.
+
+---
+
+_This is day 15 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
 
 <!--more-->

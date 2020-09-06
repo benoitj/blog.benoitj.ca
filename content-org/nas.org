@@ -147,6 +147,10 @@ Your NAS does not have to be that powerful, if all you have is documents and som
 
 Setting up your own NAS is possibly the first step to own your data.
 
+---
+
+/This is day 15 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
+
 # needed to get a proper formatted summary in index page and rss
 #+hugo: more
 
