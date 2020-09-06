@@ -2,7 +2,7 @@
 title = "Test Quality"
 author = ["Benoit Joly"]
 date = 2020-07-23
-lastmod = 2020-07-23T12:05:06-04:00
+lastmod = 2020-09-05T00:25:49-04:00
 tags = ["coding", "testing", "tools", "100DaysToOffload"]
 categories = ["tech"]
 draft = true
