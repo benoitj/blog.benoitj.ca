@@ -49,7 +49,7 @@ This has the first issue listed above: kdiff3 is called with files in the wrong 
 
 #+ATTR_HTML: :width 130%
 #+ATTR_ORG: :width 200%
-[[attachment:_20201004_0019402020-10-03_14-08.png]]
+[[attachment:_20201004_0146262020-10-03_14-08.png]]
 
 Here is my step process to solve this problem
 
@@ -80,7 +80,8 @@ Now, when calling chezmoi merge ~/.zshenv I get a good result:
 
 #+ATTR_HTML: :width 130%
 #+ATTR_ORG: :width 200%
-[[attachment:_20201004_0040482020-10-04_00-40.png]]
+[[attachment:_20201004_0147112020-10-04_00-40.png]]
+
 
 Now I just accept the automatically merged changes by saving the changes and closing kdiff3.
 

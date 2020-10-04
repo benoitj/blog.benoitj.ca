@@ -2,7 +2,7 @@
 title = "Chezmoi Merging"
 author = ["Benoit Joly"]
 date = 2020-10-03T13:13:12-04:00
-lastmod = 2020-10-04T01:40:35-04:00
+lastmod = 2020-10-04T01:47:17-04:00
 tags = ["100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -46,7 +46,7 @@ _chezmoi_ has an option to specify the mergetool:
 
 This has the first issue listed above: kdiff3 is called with files in the wrong order
 
-<_20201004_0019402020-10-03_14-08.png>
+{{< figure src="/ox-hugo/_20201004_0146262020-10-03_14-08.png" width="130%" >}}
 
 Here is my step process to solve this problem
 
@@ -77,7 +77,7 @@ and modify my ~/.config/chezomi/chezmoi.toml:
 
 Now, when calling chezmoi merge ~/.zshenv I get a good result:
 
-<_20201004_0040482020-10-04_00-40.png>
+{{< figure src="/ox-hugo/_20201004_0147112020-10-04_00-40.png" width="130%" >}}
 
 Now I just accept the automatically merged changes by saving the changes and closing kdiff3.
 
