@@ -141,6 +141,10 @@ Problem solved. I regularly run the /cmm/ alias to bring my changes in chezmoi.
 
 CLI tools offer quick ways to extend or customize to fit your habits.
 
+That being said, my scripts may break at any chezmoi release update.
+
+I just cloned the chezmoi repo, and looking to contribute more permanent changes to chezmoi diff and chezmoi merge commands. This will be a good opportunity to learn go.
+
 /This is day 16 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
 # needed to get a proper formatted summary in index page and rss

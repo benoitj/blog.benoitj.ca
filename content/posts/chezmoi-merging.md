@@ -2,7 +2,7 @@
 title = "Chezmoi Merging"
 author = ["Benoit Joly"]
 date = 2020-10-03T13:13:12-04:00
-lastmod = 2020-10-04T01:47:17-04:00
+lastmod = 2020-10-04T11:48:02-04:00
 tags = ["100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -142,6 +142,10 @@ _chezmoi_ supports that off the shelf and can be enabled with the chezmoi.toml:
 ## Conclusion and thoughts {#conclusion-and-thoughts}
 
 CLI tools offer quick ways to extend or customize to fit your habits.
+
+That being said, my scripts may break at any chezmoi release update.
+
+I just cloned the chezmoi repo, and looking to contribute more permanent changes to chezmoi diff and chezmoi merge commands. This will be a good opportunity to learn go.
 
 _This is day 16 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
 
