@@ -2,10 +2,10 @@
 title = "Chezmoi Merging"
 author = ["Benoit Joly"]
 date = 2020-10-03T13:13:12-04:00
-lastmod = 2020-10-04T01:38:14-04:00
+lastmod = 2020-10-04T01:40:35-04:00
 tags = ["100DaysToOffload"]
 categories = ["tech"]
-draft = true
+draft = false
 +++
 
 ## Adjusting chezmoi to my workflow {#adjusting-chezmoi-to-my-workflow}

@@ -7,7 +7,7 @@
 #+hugo_categories: tech
 #+hugo_tags: 100DaysToOffload
 
-#+hugo_draft: true
+#+hugo_draft: false
 
 #+title: Chezmoi Merging
 
