@@ -412,6 +412,6 @@ Some topics for next posts:
 /This is day 7 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
 # needed to get a proper formatted summary in index page and rss
-#+hugo more
+#+hugo: more
 
 * Footnotes

@@ -40,6 +40,7 @@ I sysadmin my lab, also code and deploy to Linux and Unix since I started using 
 In the recent years, I've been transitioning my desktop to Arch to get more recent software, and I run Debian on my servers.
 
 * Why Gentoo?
+
 Lets start with my background: I started coding when I was 8yo and I'm now 44. I've worked on so many things, languages, OSes. I experimented, broke many things, fixed and learned so many things and I still keep learning. I do think that anyone successful in this field should have curiosity, courage to try new things, and constant habit to self improve things. If you stopped learning, you probably don't do enough.
 
 Gentoo has a lot to give for someone who likes to understand and thinker with things. So I think it may be the perfect match for me.
@@ -102,7 +103,7 @@ Now I'm back with a working blogging setup, you can expect more posts in the nex
 
 /This is day 11 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
+#+hugo: more
 
 * Footnotes
 
-#+hugo: more

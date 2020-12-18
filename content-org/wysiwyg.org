@@ -18,6 +18,8 @@ Like it or not, in tech jobs, we have to write documentation and create diagrams
 The traditional approach is to use WYSIWYG (what you see is what you get) apps. The approach with WYSIWYG apps is to allow you to edit the graphical representation of your document. This is now mainstream in spreadsheet apps, word processors, presentation apps, and diagram tools. Using MS tools, it's word, excel, PowerPoint, vision, or the equivalent LibreOffice writer, calc, impress. These apps use more or less open formats, at the same time have you ever tried to understand one? These formats are made for software, not for humans.
 
 The older of us may remember at a time, WYSIWYG views were non existent and then became an addon feature (Anyone remembers Lotus 1-2-3?). We had the sense of progress!!! We still had stuff like sgml documents around, but for a while, plaintext documents almost disappeared.
+
+
 * Anti-productivity
 
 ** Portability
@@ -82,6 +84,7 @@ Honorable mentions:
 
 1. [[https://github.com/josephwright/beamer][LaTex Beamer]] :: often seen in scholar's presentations.
 2. [[https://tools.suckless.org/sent/][Sent]] :: extra minimalist presentation software inspired by the Takahashi technique
+
 ** Diagrams
 
 These tools are ones I use almost daily. I work with relatively large teams, and have to share ideas with coders, business analyst, clients, and many more.
@@ -92,7 +95,7 @@ How does it work for diagrams?
 
 You "code" your diagram like here in this flowchart:
 
-#+BEGIN_SRC plantuml :file wysiwig-sequence.png :exports both
+#+BEGIN_SRC plantuml :file wysiwig-sequence.png :exports both :noeval
 @startuml
 Alice -> Bob: Authentication Request
 Bob --> Alice: Authentication Response
@@ -139,7 +142,7 @@ While doing this post, I discovered some cool tools I did not know. This may be 
 
 /This is day 12 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
+#+hugo: more
 
 * Footnotes
 
-#+hugo: more

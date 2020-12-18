@@ -2,7 +2,7 @@
 title = "Ditch WYSIWYG apps and switch to plaintext tools"
 author = ["Benoit Joly"]
 date = 2020-07-31
-lastmod = 2020-07-31T13:22:30-04:00
+lastmod = 2020-12-18T00:42:14-05:00
 tags = ["coding", "plaintext", "opinion", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -153,3 +153,5 @@ While doing this post, I discovered some cool tools I did not know. This may be 
 ---
 
 _This is day 12 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
+
+<!--more-->

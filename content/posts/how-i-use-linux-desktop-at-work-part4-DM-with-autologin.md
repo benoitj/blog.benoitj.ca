@@ -2,7 +2,7 @@
 title = "Display Manager With Autologin - How I Use Linux Desktop at Work - Part4"
 author = ["Benoit Joly"]
 date = 2020-06-12T21:19:25-04:00
-lastmod = 2020-06-13T08:33:04-04:00
+lastmod = 2020-12-18T00:38:07-05:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -175,4 +175,4 @@ I hope this series inspires people to shape tools to meet their needs.
 
 _This is day 6 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
 
-\#+hugo more
+<!--more-->

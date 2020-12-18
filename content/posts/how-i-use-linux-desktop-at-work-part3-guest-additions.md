@@ -2,7 +2,7 @@
 title = "How I use Linux desktop at work - Part3 - Guest additions"
 author = ["Benoit Joly"]
 date = 2020-06-10T22:00:24-04:00
-lastmod = 2020-12-18T00:23:58-05:00
+lastmod = 2020-12-18T00:36:07-05:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -138,4 +138,4 @@ I hope this series is of some use to others and inspire people to use tools that
 
 _This is day 5 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
 
-\#+hugo more
+<!--more-->

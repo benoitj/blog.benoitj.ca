@@ -124,7 +124,7 @@ I hope this series is of some use to others and inspire people to use tools that
 
 /This is day 5 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 
-#+hugo more
+#+hugo: more
 
 * Footnotes
 # needed to get a proper formatted summary in index page and rss

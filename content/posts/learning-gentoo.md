@@ -2,7 +2,7 @@
 title = "Learning Gentoo"
 author = ["Benoit Joly"]
 date = 2020-07-25
-lastmod = 2020-07-25T23:11:05-04:00
+lastmod = 2020-12-18T00:43:25-05:00
 tags = ["coding", "testing", "tools", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -99,3 +99,5 @@ Now I'm back with a working blogging setup, you can expect more posts in the nex
 ---
 
 _This is day 11 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
+
+<!--more-->

@@ -2,7 +2,7 @@
 title = "Dotfiles management using chezmoi - How I Use Linux Desktop at Work Part5"
 author = ["Benoit Joly"]
 date = 2020-06-15T10:30:17-04:00
-lastmod = 2020-06-21T14:03:55-04:00
+lastmod = 2020-12-18T00:37:08-05:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = false
@@ -98,7 +98,7 @@ chezmoi --help
 ```
 
 ```text
-Manage your dotfiles across multiple machines, securely
+Manage your dotfiles across multiple diverse machines, securely
 
 Usage:
   chezmoi [command]
@@ -427,4 +427,4 @@ Some topics for next posts:
 
 _This is day 7 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
 
-\#+hugo more
+<!--more-->
