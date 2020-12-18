@@ -16,8 +16,9 @@ Part 3 of the series /How I use Linux desktop at work/
 Just to recap, this series is describing how I leverage vagrant and VirtualBox to provision development VM on my work PCs. I'm also taking the opportunity to build them from scratch with the tools I use at home.
 
 Previous posts:
-1. [[https://blog.benoitj.ca/2020-05-29-how-i-use-linux-desktop-at-work-part1-basic-setup/][part1]] - Basic setup
-2. [[https://blog.benoitj.ca/2020-06-09-how-i-use-linux-desktop-at-work-part2-wm/][part2]] - X, and WM
+
+  1. [[https://blog.benoitj.ca/2020-05-29-how-i-use-linux-desktop-at-work-part1-basic-setup/][part1]] - Basic setup
+  2. [[https://blog.benoitj.ca/2020-06-09-how-i-use-linux-desktop-at-work-part2-wm/][part2]] - X, and WM
 
 In the post, I'll cover:
 
@@ -101,7 +102,6 @@ Once installed, you can reboot the VM with:
 config.vm.provision :reload
 #+END_SRC
 
-
 * Value of all this
 
 At this stage, with just a single vagrant up command, I can automatically provision a Linux VM with X configured and a basic window manager.
@@ -121,7 +121,6 @@ This may just be one post, we'll see.
 ---
 
 I hope this series is of some use to others and inspire people to use tools that suits their needs.
-
 
 /This is day 5 of my #100DaysToOffload. You can read more about the challenge here: [[https://100daystooffload.com]]./
 

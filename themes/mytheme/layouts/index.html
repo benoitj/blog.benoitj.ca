@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+<ul>
+{{ range where .Site.RegularPages "Section" "posts" }}
+    <li>
+        <a href={{ .Permalink }}><div class="title"> {{ if .Draft }} DRAFT: {{ end }} {{ .Title }}</div></a>
+        {{ .Date.Format .Site.Params.dateform }}
+    </li>
+{{ end }}
+</ul>
+
+{{ partial "footer.html" . }}

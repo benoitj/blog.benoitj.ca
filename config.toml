@@ -1,7 +1,7 @@
 baseURL = "https://blog.benoitj.ca/"
 languageCode = "en-us"
 title = "My mostly tech blog"
-theme = "mymotherfuckingwebsite"
+theme = "mytheme"
 
 [permalinks]
   "/posts" = "/:year-:month-:day-:filename/"

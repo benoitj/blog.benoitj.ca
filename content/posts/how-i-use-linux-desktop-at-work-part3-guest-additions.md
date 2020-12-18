@@ -2,7 +2,7 @@
 title = "How I use Linux desktop at work - Part3 - Guest additions"
 author = ["Benoit Joly"]
 date = 2020-06-10T22:00:24-04:00
-lastmod = 2020-06-10T22:06:31-04:00
+lastmod = 2020-12-18T00:23:58-05:00
 tags = ["Linux", "coding", "tools", "vm", "100DaysToOffload"]
 categories = ["tech"]
 draft = false

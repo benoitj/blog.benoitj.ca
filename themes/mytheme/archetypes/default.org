@@ -1,0 +1,13 @@
+---
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+draft: true
+categories:
+- undef
+tags:
+- undef
+---
+
+
+# needed to get a proper formatted summary in index page and rss
+# <!--more-->
