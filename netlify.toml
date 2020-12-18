@@ -2,8 +2,8 @@
 publish = "public"
 command = "hugo --gc --minify"
 
-[[plugins]]
-package = "netlify-plugin-checklinks"
+#[[plugins]]
+#package = "netlify-plugin-checklinks"
 
 [context.production.environment]
 HUGO_VERSION = "0.71.1"
