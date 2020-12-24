@@ -2,7 +2,7 @@
 title = "Lean UX, large code"
 author = ["Benoit Joly"]
 date = 2020-12-23T20:49:46-05:00
-lastmod = 2020-12-23T21:04:58-05:00
+lastmod = 2020-12-23T21:23:45-05:00
 tags = ["100DaysToOffload", "blogging-setup"]
 categories = ["tech"]
 draft = false
@@ -101,26 +101,24 @@ his is 75 times smaller than the original size. This is 0.53 KB per post instead
 
 At the time of writing this post, this puts me at the top 12 smallest sites on the 512kb club.
 
-<a id="orgffd519c"></a>
+<a id="orge1736b3"></a>
 
 {{< figure src="https://512kb.club/images/green-team.svg" alt="green banner from 512kb club for sites < 100kb" link="https://512kb.club" >}}
 
 
 ## Before / After {#before-after}
 
-{{< figure src="./lean-ux-fat-code-before.png" alt="picture showing the original version with large CSS" caption="Figure 1: Before" >}}
+{{< figure src="/ox-hugo/lean-ux-fat-code-before.png" alt="picture showing the original version with large CSS" caption="Figure 1: Before" >}}
 
 {{< figure src="/ox-hugo/lean-ux-fat-code-after.png" alt="picture showing after new css. minimal changes visible compared to before" caption="Figure 2: After" >}}
 
 
 ## Thoughts {#thoughts}
 
-I had fun trying to optimize as much as I could.
+Creating simple solutions is not necessarily easy, but is fun and rewarding.
 
-I wish this was also applied in the IT industry. The web is bloat, but it's not better in backend code.
+At the same time, you can do a lot with not much time.
 
-Creating simple solutions is not necessarily easy.
-
-I wish there were more people motivated and driven by constantly improving their skills and their code.
+I wish to inspire peers (especially in the IT industry). The web is bloat, but it's not better in backend code.
 
 <!--more-->
