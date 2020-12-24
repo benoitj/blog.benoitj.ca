@@ -2,7 +2,7 @@
 title = "Lean UX, large code"
 author = ["Benoit Joly"]
 date = 2020-12-23T20:49:46-05:00
-lastmod = 2020-12-23T21:23:45-05:00
+lastmod = 2020-12-23T21:32:03-05:00
 tags = ["100DaysToOffload", "blogging-setup"]
 categories = ["tech"]
 draft = false
@@ -14,9 +14,9 @@ Two weekends ago, bored, I was looking for something to do.
 
 I remembered posts on fosstodon about some website size ranking called "[The 512kb club](https://512kb.club)".
 
-Last time I worked on my blog setup, I tried porting it to emacs org publish.
+Last time I worked on my blog setup, I tried porting it to Emacs org publish.
 
-Following the instructions on 512kb site, I ran my site through GTMetrix.
+Following the instructions on 512KB site, I ran my site through GTMetrix.
 
 To my surprise, I discovered my simple blog index page was roughly 600KB.
 
@@ -31,7 +31,7 @@ I was motivated, I had a plan: ****make my blog leaner****
 
 I never optimize without data, so a quick look at GTMetrix told me the problem: the CSS, and fonts were the majority of that 600KB.
 
-I got these from the theme I imported during my initial setup (on my 1st post). It was based of a hugo theme posted on github made to look like motherfuckingwebsite, but I had to admit, like many site with lean UX, under the hood it was not lean.
+I got these from the theme I imported during my initial setup (on my 1st post). It was based of a Hugo theme posted on GitHub made to look like motherfuckingwebsite, but I had to admit, like many site with lean UX, under the hood it was not lean.
 
 
 ## In search of a real lean CSS {#in-search-of-a-real-lean-css}
@@ -45,13 +45,13 @@ The best way to succeed would be to generate this site with plain semantic HTML,
 
 ## The wrong approach {#the-wrong-approach}
 
-I decided to continue porting my blog to emacs org publish. The idea being it would remove Hugo from the equation since I already use emacs org-mode for this blog.
+I decided to continue porting my blog to Emacs org publish. The idea being it would remove Hugo from the equation since I already use Emacs org-mode for this blog.
 
 After couple of hours of work, I finally succeeded: my blog was rendering like before, with the same CSS as before, and I even got the RSS properly rendered.
 
-Next would be the CSS, so I decided to open up the produced html to get ready for some CSS work. The result? I was way further from my original goal. The generated page was just full of divs, almost unreadable.
+Next would be the CSS, so I decided to open up the produced HTML to get ready for some CSS work. The result? I was way further from my original goal. The generated page was just full of divs, almost unreadable.
 
-I tried to fix this, but the more I fixed issues in the generator (I had to customize many emacs functions in lisp), the further I was to keep things simple.
+I tried to fix this, but the more I fixed issues in the generator (I had to customize many Emacs functions in lisp), the further I was to keep things simple.
 
 I just had to admit, that the only thing productive about this effort was the learning I gained :P
 
@@ -83,7 +83,7 @@ What can I do to improve?
 
 I could always try to reduce that 4.5KB CSS, but this would mean spending time learning this code, or writing my own. Not enough time for that yet.
 
-What else can I learn from the GTMetrix site? ohh, a 404 on favicon.ico cost roughtly 1KB
+What else can I learn from the GTMetrix site? ohh, a 404 on favicon.ico cost roughly 1KB
 
 What If I could create the smallest possible file, to prevent my 404 page to render. This could work.
 
@@ -101,7 +101,7 @@ his is 75 times smaller than the original size. This is 0.53 KB per post instead
 
 At the time of writing this post, this puts me at the top 12 smallest sites on the 512kb club.
 
-<a id="orge1736b3"></a>
+<a id="org6821e46"></a>
 
 {{< figure src="https://512kb.club/images/green-team.svg" alt="green banner from 512kb club for sites < 100kb" link="https://512kb.club" >}}
 
@@ -120,5 +120,11 @@ Creating simple solutions is not necessarily easy, but is fun and rewarding.
 At the same time, you can do a lot with not much time.
 
 I wish to inspire peers (especially in the IT industry). The web is bloat, but it's not better in backend code.
+
+****Note****: as a side note, I still motivate myself with 100DaysToOffload. It will take some time to reach my goal (17 posts so far), but I will get there sometime in the next few months, or years.
+
+---
+
+_This is day 17 of my #100DaysToOffload. You can read more about the challenge here: <https://100daystooffload.com>._
 
 <!--more-->
