@@ -3,13 +3,13 @@
 
 #+hugo_auto_set_lastmod: f
 
-#+date: 2020-12-22T20:49:46-05:00
+#+date: 2020-12-23T20:49:46-05:00
 #+hugo_categories: tech
-#+hugo_tags: 100DaysToOffload
+#+hugo_tags: 100DaysToOffload blogging-setup
 
-#+hugo_draft: true
+#+hugo_draft: false
 
-#+title: When lean lead to complex
+#+title: Lean UX, large code
 
 * It all started that day
 
@@ -99,6 +99,17 @@ At the time of writing this post, this puts me at the top 12 smallest sites on t
 #+NAME: 512kb green team
 #+ATTR_HTML: :alt green banner from 512kb club for sites < 100kb
 [[https://512kb.club][https://512kb.club/images/green-team.svg]]
+
+
+* Before / After
+
+#+CAPTION: Before
+#+ATTR_HTML: :alt picture showing the original version with large CSS
+[[./lean-ux-fat-code-before.png]]
+
+#+CAPTION: After
+#+ATTR_HTML: :alt picture showing after new css. minimal changes visible compared to before
+[[./lean-ux-fat-code-after.png]]
 
 * Thoughts
 

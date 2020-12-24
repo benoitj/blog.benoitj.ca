@@ -1,11 +1,11 @@
 +++
-title = "When lean lead to complex"
+title = "Lean UX, large code"
 author = ["Benoit Joly"]
-date = 2020-12-22T20:49:46-05:00
-lastmod = 2020-12-22T23:10:06-05:00
-tags = ["100DaysToOffload"]
+date = 2020-12-23T20:49:46-05:00
+lastmod = 2020-12-23T21:04:58-05:00
+tags = ["100DaysToOffload", "blogging-setup"]
 categories = ["tech"]
-draft = true
+draft = false
 +++
 
 ## It all started that day {#it-all-started-that-day}
@@ -101,9 +101,16 @@ his is 75 times smaller than the original size. This is 0.53 KB per post instead
 
 At the time of writing this post, this puts me at the top 12 smallest sites on the 512kb club.
 
-<a id="org03c873c"></a>
+<a id="orgffd519c"></a>
 
 {{< figure src="https://512kb.club/images/green-team.svg" alt="green banner from 512kb club for sites < 100kb" link="https://512kb.club" >}}
+
+
+## Before / After {#before-after}
+
+{{< figure src="./lean-ux-fat-code-before.png" alt="picture showing the original version with large CSS" caption="Figure 1: Before" >}}
+
+{{< figure src="/ox-hugo/lean-ux-fat-code-after.png" alt="picture showing after new css. minimal changes visible compared to before" caption="Figure 2: After" >}}
 
 
 ## Thoughts {#thoughts}
